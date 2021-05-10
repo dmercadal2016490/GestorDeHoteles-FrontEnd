@@ -51,7 +51,7 @@ export class RestUserService {
 
   createUser(user){
     let params = JSON.stringify(user);
-    return this.http.post(this.uri + 'create', params, this.httpOptions)
+    return this.http.post(this.uri + 'usuarios/create', params, this.httpOptions)
       .pipe(map(this.extractData))
   }
 }

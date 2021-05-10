@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit(register){
     this.restUser.createUser(this.user).subscribe((res:any)=>{
-      if(res.userSaved){
+      if(res.nuevoUsuarioCreado){
         alert(res.message);
         register.reset();
       }else{

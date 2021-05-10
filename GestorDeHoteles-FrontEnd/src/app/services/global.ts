@@ -1,3 +1,3 @@
 export const CONNECTION ={
-    URI: 'https://localhost:3000/'
+    URI: 'http://localhost:3000/'
 }
