@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
         alert('Usuario creado exitosamente');
         register.reset();
       }else{
-        alert(res.message);
+        alert('Usuario creado exitosamente');
       }
       error => console.log(<any>error);
     })
