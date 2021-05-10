@@ -1,0 +1,34 @@
+body{
+    height: 100%;
+    background-image: url('../../../assets/img/beach.jpg');
+    background-size: cover;
+    align-items: center;
+}
+
+.registro{
+    background-color:aliceblue;
+    padding: 15px;
+    margin: auto;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 150px;
+}
+
+.texto1{
+    font-size: 50px;
+    font-family: 'Times New Roman';
+    text-align: center;
+}
+
+.form-control{
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.centro{
+    align-content: center;
+    text-align: center;
+}
