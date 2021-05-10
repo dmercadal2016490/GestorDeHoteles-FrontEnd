@@ -1,0 +1,72 @@
+body{
+    height: 100%;
+    background-image: url('../../../assets/img/beach.jpg');
+    background-size: cover;
+    align-items: center;
+}
+
+.imagenPrincipal{
+    width: 120px;
+    height:120px;
+    color: red;
+    margin-left: 650px;
+    margin-top: 100px;
+}
+
+.formulario{
+    background-color:white;
+    padding: 15px;
+    margin: auto;
+    margin-left: 350px;
+    margin-right: 350px;
+    margin-bottom: 60px;
+}
+
+.texto1{
+    font-size: 70px;
+    font-family: Tw Cen MT;
+    text-align: center;
+}
+
+.texto2{
+    font-size: 40px;
+    font-family: cursive;
+}
+
+.division{
+    background-color: gray;
+    height: 45px;
+    width: 45px;
+    float: left;
+}
+
+.form-signin .form-control{
+   font-size: 16px;
+}
+
+.input{
+    font-size: 16px;
+    height: 45px;
+    width: 600px;
+    padding: 20px;
+    font-family: Georgia;
+}
+
+button{
+    border-radius: 15px;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+button:hover{
+    transition: all 1s;
+    background-color: #7ACA8B;
+}
+
+.texto3{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-top: 100px;
+}

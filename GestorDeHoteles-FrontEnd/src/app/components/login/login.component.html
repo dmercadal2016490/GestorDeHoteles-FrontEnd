@@ -1,1 +1,18 @@
+<body>
 <p>login works!</p>
+<img class="imagenPrincipal" src="../../../assets/img/data.png">
+<form class="formulario" #login="ngForm" (ngSubmit)="onSubmit()">
+    <h1 class="texto1">Login</h1>
+    <span class="division">
+        <img src="../../../assets/img/user.png" height="45px" width="45px">
+    </span>
+    <input [(ngModel)]="user.username" name="username" class="input" type="text" id="inputUsername" placeholder="Username" required><br><br>
+    <span class="division">
+        <img src="../../../assets/img/pass.png" alt="contraseña" height="45px" width="45px">
+    </span>
+    <input [(ngModel)]="user.password" name="password" class="input" type="text" id="inputUsername" placeholder="Password" required><br><br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]="!login.form.valid">Registrate</button>
+
+</form>
+<p class="texto3">&copy; Grupo #2</p>
+</body>

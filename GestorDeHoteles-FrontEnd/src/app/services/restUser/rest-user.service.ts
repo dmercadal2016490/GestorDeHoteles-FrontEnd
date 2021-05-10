@@ -54,4 +54,10 @@ export class RestUserService {
     return this.http.post(this.uri + 'usuarios/create', params, this.httpOptions)
       .pipe(map(this.extractData))
   }
+
+  login(user){
+    let params = JSON.stringify(user);
+    return this.http.post(this.uri + 'usuarios/login', params, this.httpOptions)
+      .pipe(map(this.extractData))
+  }
 }
