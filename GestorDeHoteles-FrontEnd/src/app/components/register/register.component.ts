@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   onSubmit(register){
     this.restUser.createUser(this.user).subscribe((res:any)=>{
       if(res.nuevoUsuarioCreado){
-        alert(res.message);
+        alert('Usuario creado exitosamente');
         register.reset();
       }else{
         alert(res.message);
