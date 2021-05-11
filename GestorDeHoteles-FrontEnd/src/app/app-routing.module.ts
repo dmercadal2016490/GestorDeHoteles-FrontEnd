@@ -6,6 +6,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { SaveHotelComponent } from './components/save-hotel/save-hotel.component';
 import { SaveUserComponent } from './components/save-user/save-user.component';
+import { AdminGuard } from './guards/admin.guard';
+
+
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
@@ -14,7 +17,9 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path: 'home', component:HomeComponent},
   {path: 'saveUser', component: SaveUserComponent},
-  {path: 'saveHotel', component: SaveHotelComponent}
+  {path: 'saveHotel', component: SaveHotelComponent},
+  {path: 'saveHotel', component: SaveHotelComponent},
+  {path:'saveUser', canActivate:[AdminGuard], component:SaveUserComponent}
 ];
 
 @NgModule({
