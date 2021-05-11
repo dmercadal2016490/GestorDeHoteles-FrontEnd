@@ -1,0 +1,19 @@
+<body>
+    <h1>Agregar Hotel</h1>
+    <form #saveHotel="ngForm" (ngSubmit)="onSubmit">
+        <div>
+            <label>Nombre</label>
+            <input type="text" id="inputName">
+        </div>
+        <div>
+            <label>Dirección</label>
+            <input type="text" id="inputDirección">
+        </div>
+        <div>
+            <label>Escoja al administrador</label>
+            <select [(ngModel)]="hotel.admin" name="admin" id="selectAdmin">
+                <option *ngFor="let admin of admins">{{admin}}</option>
+            </select>
+        </div>
+    </form>
+</body>

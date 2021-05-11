@@ -10,7 +10,13 @@ export class RestUserService {
   public uri:string;
   public httpOptions ={
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+    })
+  };
+  public httpOptionsAuth ={
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization' : 'Bearer '+this.getToken()
     })
   }
 
@@ -59,5 +65,10 @@ export class RestUserService {
     let params = JSON.stringify(user);
     return this.http.post(this.uri + 'usuarios/login', params, this.httpOptions)
       .pipe(map(this.extractData))
+  }
+
+  getUserAdminHotel(){
+    return this.http.get(this.uri + 'usuarios/adminHotel', this.httpOptions)
+      .pipe(map(this.extractData));
   }
 }
