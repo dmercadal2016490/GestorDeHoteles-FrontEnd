@@ -17,6 +17,7 @@ import { SaveHotelComponent } from './components/save-hotel/save-hotel.component
 import { SaveUserComponent } from './components/save-user/save-user.component';
 import { UserComponent } from './components/user/user.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
     SaveUserComponent,
     SaveHotelComponent,
     UserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
