@@ -68,7 +68,7 @@ export class RestUserService {
   }
 
   getUserAdminHotel(){
-    return this.http.get(this.uri + 'usuarios/adminHotel', this.httpOptions)
+    return this.http.get(this.uri + 'usuarios/adminHotel', this.httpOptionsAuth)
       .pipe(map(this.extractData));
   }
 }

@@ -12,7 +12,10 @@ export class SaveHotelComponent implements OnInit {
 public user;
 public token;
 public hotel: Hotel;
-admins = [];
+adminsNombres = [];
+admins = []
+adminEncontrado = [];
+
 
   constructor(private restUser: RestUserService) { 
 
@@ -22,8 +25,16 @@ admins = [];
 
   ngOnInit(): void {
     this.restUser.getUserAdminHotel().subscribe((res:any) => {
-      if(res.adminHotel){
-        this.admins = res.adminHotel;
+      if(res){
+        res.forEach(element => {
+          element.forEach(elementoAdmin => {
+            this.admins.push(elementoAdmin)
+            localStorage.setItem('adminHotels', JSON.stringify(this.admins))
+            this.adminsNombres.push(elementoAdmin.name + " " + elementoAdmin.lastname)
+          })
+        });
+      }else{
+        alert('No existen Usuarios')
       }
     })
   }
