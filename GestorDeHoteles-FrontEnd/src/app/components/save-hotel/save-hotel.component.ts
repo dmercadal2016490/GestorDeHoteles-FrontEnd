@@ -30,7 +30,7 @@ adminEncontrado = [];
           element.forEach(elementoAdmin => {
             this.admins.push(elementoAdmin)
             localStorage.setItem('adminHotels', JSON.stringify(this.admins))
-            this.adminsNombres.push(elementoAdmin.name + " " + elementoAdmin.lastname)
+            this.adminsNombres.push(elementoAdmin.name)
           })
         });
       }else{
