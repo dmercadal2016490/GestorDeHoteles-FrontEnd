@@ -1,8 +1,6 @@
 export class Hotel{
 
     constructor(
-
-        public _id: string,
         public name: string,
         public direccion: string,
         public solicitud: string,

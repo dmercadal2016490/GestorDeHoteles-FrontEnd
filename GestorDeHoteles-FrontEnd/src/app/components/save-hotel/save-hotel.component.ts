@@ -23,7 +23,7 @@ idAdmin;
   constructor(private restUser: RestUserService) { 
 
     this.user = new User('','','','','','','ROL_CLIENT',[],[]);
-    this.hotel = new Hotel('','','','',[],[],[],[],[]);
+    this.hotel = new Hotel('','','',[],[],[],[],[]);
   }
 
   ngOnInit(): void {
