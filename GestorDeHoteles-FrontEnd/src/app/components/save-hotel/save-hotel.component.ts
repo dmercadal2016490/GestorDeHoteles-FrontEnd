@@ -43,14 +43,14 @@ idAdmin;
   }
 
   onSubmit(saveHotel){
-    let adminId = JSON.parse(localStorage.getItem('adminHoteles'))
+    let adminId = JSON.parse(localStorage.getItem('adminHotels'))
     adminId.forEach(elemento => {
       if(elemento.name.includes(this.idAdmin)){
         this.adminHotel = elemento._id
       }
     });
-
-    this.restUser.saveHotel(this.hotel, this.idAdmin).subscribe((res:any)=>{
+    console.log(this.adminHotel);
+    this.restUser.saveHotel(this.hotel, this.adminHotel).subscribe((res:any)=>{
       if(res.hotel){
         console.log(saveHotel)
         //alert('Hotel creado exitosamente');

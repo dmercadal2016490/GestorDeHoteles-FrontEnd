@@ -3,11 +3,11 @@
     <form #saveHotel="ngForm" (ngSubmit)="onSubmit(saveHotel)">
         <div>
             <label>Nombre</label>
-            <input [(ngModel)]="hotel.name" type="text" id="inputName">
+            <input [(ngModel)]="hotel.name" name="name" type="text" id="inputName">
         </div>
         <div>
             <label>Dirección</label>
-            <input [(ngModel)]="hotel.direccion" type="text" id="inputDirección">
+            <input [(ngModel)]="hotel.direccion" name="direccion" type="text" id="inputDirección">
         </div>
         <div>
             <label>Escoja al administrador</label>

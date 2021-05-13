@@ -76,7 +76,7 @@ export class RestUserService {
   saveHotel(hotel, idAdmin){
     console.log(hotel)
     let params = JSON.stringify(hotel)
-    return this.http.post(this.uri+'hoteles/create'+idAdmin,params, this.httpOptionsAuth)
+    return this.http.post(this.uri+'hoteles/create/'+idAdmin,params, this.httpOptionsAuth)
       .pipe(map(this.extractData))
   }
 }
