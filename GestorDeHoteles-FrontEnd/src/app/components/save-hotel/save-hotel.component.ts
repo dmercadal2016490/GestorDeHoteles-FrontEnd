@@ -17,6 +17,7 @@ admins = []
 adminEncontrado = [];
 adminHotel;
 idAdmin;
+hotelCreado;
   message: any;
 
 
@@ -51,12 +52,14 @@ idAdmin;
     });
     console.log(this.adminHotel);
     this.restUser.saveHotel(this.hotel, this.adminHotel).subscribe((res:any)=>{
+      this.hotelCreado = res;
       if(res.hotel){
         console.log(saveHotel)
         //alert('Hotel creado exitosamente');
         //saveHotel.reset();
       }else{
         //alert('Hotel creado exitosamente');
+        localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
         console.log(saveHotel)
       }
       error => console.log(<any>error);
