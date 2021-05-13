@@ -57,10 +57,13 @@ hotelCreado;
         console.log(saveHotel)
         //alert('Hotel creado exitosamente');
         //saveHotel.reset();
+        localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
+        saveHotel.reset();
       }else{
         //alert('Hotel creado exitosamente');
         localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
         console.log(saveHotel)
+        saveHotel.reset();
       }
       error => console.log(<any>error);
     })
