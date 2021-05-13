@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestUserService } from '../../services/restUser/rest-user.service';
 import { User } from '../../models/user';
 import { Hotel } from '../../models/hotel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-save-hotel',
@@ -21,10 +22,10 @@ hotelCreado;
   message: any;
 
 
-  constructor(private restUser: RestUserService) { 
+  constructor(private restUser: RestUserService, private route: Router) { 
 
     this.user = new User('','','','','','','ROL_CLIENT',[],[]);
-    this.hotel = new Hotel('','','',[],[],[],[],[]);
+    this.hotel = new Hotel('','','','',[],[],[],[],[]);
   }
 
   ngOnInit(): void {
@@ -59,11 +60,13 @@ hotelCreado;
         //saveHotel.reset();
         localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
         saveHotel.reset();
+        this.route.navigateByUrl('habitacion')
       }else{
         //alert('Hotel creado exitosamente');
         localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
         console.log(saveHotel)
         saveHotel.reset();
+        this.route.navigateByUrl('habitacion')
       }
       error => console.log(<any>error);
     })
