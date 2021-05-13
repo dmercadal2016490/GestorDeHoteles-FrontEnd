@@ -11,7 +11,7 @@
         </div>
         <div>
             <label>Escoja al administrador</label>
-            <select name="admin" id="selectAdmin" [(ngModel)]="idAdmin">
+            <select [(ngModel)]="idAdmin" name="admin" id="selectAdmin">
                 <option *ngFor="let admin of adminsNombres">{{admin}}</option>
             </select>
         </div>

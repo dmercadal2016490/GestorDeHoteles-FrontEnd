@@ -8,6 +8,7 @@ import { SaveHotelComponent } from './components/save-hotel/save-hotel.component
 import { SaveUserComponent } from './components/save-user/save-user.component';
 import { AdminGuard } from './guards/admin.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { HabitacionComponent } from './components/habitacion/habitacion.component';
 
 
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'saveHotel', component: SaveHotelComponent},
   {path: 'saveHotel', component: SaveHotelComponent},
   {path:'saveUser', canActivate:[AdminGuard], component:SaveUserComponent},
-  {path: 'navbar', component: NavbarComponent}
+  {path: 'navbar', component: NavbarComponent},
+  {path: 'habitacion', component: HabitacionComponent},
 ];
 
 @NgModule({
