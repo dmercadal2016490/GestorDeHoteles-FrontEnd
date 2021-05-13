@@ -15,6 +15,9 @@ public hotel: Hotel;
 adminsNombres = [];
 admins = []
 adminEncontrado = [];
+adminHotel;
+idAdmin;
+  message: any;
 
 
   constructor(private restUser: RestUserService) { 
@@ -39,8 +42,25 @@ adminEncontrado = [];
     })
   }
 
-  onSubmit(){
+  onSubmit(saveHotel){
+    let adminId = JSON.parse(localStorage.getItem('adminHoteles'))
+    adminId.forEach(elemento => {
+      if(elemento.name.includes(this.idAdmin)){
+        this.adminHotel = elemento._id
+      }
+    });
 
+    this.restUser.saveHotel(this.hotel, this.idAdmin).subscribe((res:any)=>{
+      if(res.hotel){
+        console.log(saveHotel)
+        //alert('Hotel creado exitosamente');
+        //saveHotel.reset();
+      }else{
+        //alert('Hotel creado exitosamente');
+        console.log(saveHotel)
+      }
+      error => console.log(<any>error);
+    })
   }
 
 }

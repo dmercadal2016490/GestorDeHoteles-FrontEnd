@@ -22,6 +22,7 @@ export class RestUserService {
 
   public user;
   public token;
+  public hotel;
 
   private extractData(res: Response){
     let body = res;
@@ -70,5 +71,12 @@ export class RestUserService {
   getUserAdminHotel(){
     return this.http.get(this.uri + 'usuarios/adminHotel', this.httpOptionsAuth)
       .pipe(map(this.extractData));
+  }
+
+  saveHotel(hotel, idAdmin){
+    console.log(hotel)
+    let params = JSON.stringify(hotel)
+    return this.http.post(this.uri+'hoteles/create'+idAdmin,params, this.httpOptionsAuth)
+      .pipe(map(this.extractData))
   }
 }
