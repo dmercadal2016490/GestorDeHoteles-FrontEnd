@@ -1,1 +1,49 @@
-<p>user works!</p>
+<body class="text-center">
+<p>.</p>
+<div>
+    <h1>{{title}}</h1>
+    <img src="../../../assets/img/usuario.png"><hr>
+    <h2 class="texto1">Username</h2>
+    <div class="division">
+        <label class="texto2">{{user.username}}</label>
+    </div><hr>
+    <h2 class="texto1">Nombre</h2>
+    <div class="division">
+        <label class="texto2">{{user.name}}</label>
+    </div><hr>
+    <h2 class="texto1">Apellido</h2>
+    <div class="division">
+        <label class="texto2">{{user.lastname}}</label>
+    </div><hr>
+    <h2 class="texto1">Correo</h2>
+    <div class="division">
+        <label class="texto2">{{user.email}}</label>
+    </div><hr>
+    <button type="button" class="btn btn-primary col-lg-3 mx-2" (click)="cerrarSesion()">Cerrar sesion</button>
+    <button type="button" class="btn btn-success col-lg-3 mx-2" routerLink="/updateUser">Actualizar cuenta</button>
+    <button type="button" class="btn btn-danger col-lg-3 mx-2" data-toggle="modal" data-target="#exampleModal">
+        Eliminar cuenta
+    </button>    
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="texto3">&copy; Grupo #2</p>
+</body>

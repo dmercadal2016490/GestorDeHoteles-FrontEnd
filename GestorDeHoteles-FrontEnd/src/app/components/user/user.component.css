@@ -1,0 +1,49 @@
+body{
+    background-image: url('../../../assets/img/beach2.jpg');
+    background-size: cover;
+}
+
+img{
+    border-radius: 150px;
+    height: 120px;
+    width: 120px;
+}
+
+div{
+    background-color: white;
+    border-style: solid;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+.texto1{
+    font-family: Verdana;
+    font-size: 30px;
+    text-align: left;
+}
+
+.texto2{
+    font-family: Verdana;
+    font-size: 30px;
+}
+
+.division{
+    border-style:solid;
+    border-radius: 20px;
+    margin-left: 0px;
+    margin-right: 0;
+    text-align: left;
+    padding-left: 30px;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.texto3{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-top: 100px;
+}

@@ -9,6 +9,9 @@ import { SaveUserComponent } from './components/save-user/save-user.component';
 import { AdminGuard } from './guards/admin.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HabitacionComponent } from './components/habitacion/habitacion.component';
+import { UserComponent } from './components/user/user.component';
+import { UpdateUserComponent } from './components/update-user/update-user.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -24,6 +27,9 @@ const routes: Routes = [
   {path:'saveUser', canActivate:[AdminGuard], component:SaveUserComponent},
   {path: 'navbar', component: NavbarComponent},
   {path: 'habitacion', component: HabitacionComponent},
+  {path: 'user', component: UserComponent},
+  {path: 'updateUser', component: UpdateUserComponent},
+  {path: '**', component:NotFoundComponent}
 ];
 
 @NgModule({

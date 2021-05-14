@@ -19,6 +19,7 @@ import { UserComponent } from './components/user/user.component';
 import { UpdateUserComponent } from './components/update-user/update-user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HabitacionComponent } from './components/habitacion/habitacion.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { HabitacionComponent } from './components/habitacion/habitacion.componen
     UserComponent,
     UpdateUserComponent,
     NavbarComponent,
-    HabitacionComponent
+    HabitacionComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
