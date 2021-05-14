@@ -25,4 +25,9 @@ export class NavbarComponent implements OnInit, DoCheck {
     this.token = this.restUser.getToken();
     this.user = this.restUser.getUser();
   }
+
+  logOut(){
+    localStorage.clear();
+    this.router.navigateByUrl('home');
+  }
 }

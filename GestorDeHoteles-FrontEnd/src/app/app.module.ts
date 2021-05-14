@@ -20,6 +20,7 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HabitacionComponent } from './components/habitacion/habitacion.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { RestUserService } from './services/restUser/rest-user.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [RestUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
