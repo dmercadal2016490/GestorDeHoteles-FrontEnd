@@ -28,6 +28,7 @@ export class NavbarComponent implements OnInit, DoCheck {
 
   logOut(){
     localStorage.clear();
-    this.router.navigateByUrl('home');
+    this.router.navigateByUrl('index');
+    alert('Gracias por visitarnos. Usuario deslogeado');
   }
 }

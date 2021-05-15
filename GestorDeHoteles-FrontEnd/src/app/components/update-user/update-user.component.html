@@ -1,1 +1,21 @@
-<p>update-user works!</p>
+<body class="text-center">
+    <p>.</p>
+    <div>
+        <h1>{{title}}</h1>
+        <img src="../../../assets/img/actu.jpg"><hr>
+        <h2 class="texto1" for="inputUserName">Username</h2>
+            <input [(ngModel)]="user.username" name="username" #username="ngModel" class="form-control" id="inputUserName" type="text" placeholder="your username">
+        <hr>
+        <h2 class="texto1" for="inputName">Nombre</h2>
+            <input [(ngModel)]="user.name" name="name" #name="ngModel" class="form-control" id="inputName" type="text" placeholder="your name">
+        <hr>
+        <h2 class="texto1" for="inputLastName">Apellido</h2>
+            <input [(ngModel)]="user.lastname" name="lastname" #lastname="ngModel" class="form-control" id="inputLastName" type="text" placeholder="your username">
+        <hr>
+        <h2 class="texto1" for="inputEmail">Correo</h2>
+        <input [(ngModel)]="user.email" name="email" #email="ngModel" class="form-control" id="inputEmail" type="text" placeholder="your username">
+        <hr>
+        <button type="button" class="btn btn-success col-lg-3 mx-2" routerLink="/updateUser">Actualizar cuenta</button>
+        <button type="button" class="btn btn-danger col-lg-3 mx-2" routerLink="/user">Cancelar</button>
+    </div>
+    <h2 class="texto3">&copy;Grupo #2</h2>
