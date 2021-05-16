@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,DoCheck, OnInit} from '@angular/core';
 import { User } from '../../models/user';
 import { RestUserService } from '../../services/restUser/rest-user.service';
 import { Router } from'@angular/router';
@@ -17,6 +17,24 @@ export class UpdateUserComponent implements OnInit {
     this.title = 'Actualizar perfil'
    }
   ngOnInit(): void {
+  }
+
+
+  onSubmit(){
+    delete this.user.password;
+    this.restUser.updateUser(this.user).subscribe((res:any)=>{
+      if(res.updateUser){
+        delete res.updateUser.password;
+        localStorage.setItem('user', JSON.stringify(res.updateUser));
+        alert('Usuario actualizado');
+        this.router.navigateByUrl('user');
+      }else{
+        alert('Usuario actualizado en base de datos');
+        this.restUser.getUser();
+        this.router.navigateByUrl('user');
+      }
+    },
+    error=> console.log(error.error))
   }
 
 }

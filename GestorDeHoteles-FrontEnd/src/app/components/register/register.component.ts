@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   public username:string;
 
   constructor(private restUser:RestUserService, private route:Router) {
-      this.user = new User('','','','','','','ROL_CLIENT',[],[]);
+      this.user = new User('','','','','','ROL_CLIENT',[],[]);
    }
 
    

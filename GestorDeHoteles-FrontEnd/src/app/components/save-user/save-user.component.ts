@@ -14,7 +14,7 @@ export class SaveUserComponent implements OnInit {
   public token;
 
   constructor(private restUser:RestUserService, private router:Router) {
-    this.user = new User('','','','','','','',[],[]);
+    this.user = new User('','','','','','',[],[]);
    }
 
   ngOnInit(): void {

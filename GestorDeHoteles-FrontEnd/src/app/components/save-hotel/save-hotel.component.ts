@@ -24,7 +24,7 @@ hotelCreado;
 
   constructor(private restUser: RestUserService, private route: Router) { 
 
-    this.user = new User('','','','','','','ROL_CLIENT',[],[]);
+    this.user = new User('','','','','','ROL_CLIENT',[],[]);
     this.hotel = new Hotel('','','','',[],[],[],[],[]);
   }
 
@@ -56,19 +56,19 @@ hotelCreado;
       this.hotelCreado = res;
       if(res.hotel){
         console.log(saveHotel)
-        //alert('Hotel creado exitosamente');
-        //saveHotel.reset();
+        alert('Hotel creado exitosamente');
+        saveHotel.reset();
         localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
         saveHotel.reset();
         this.route.navigateByUrl('habitacion')
       }else{
-        //alert('Hotel creado exitosamente');
+        alert('Hotel creado exitosamente');
         localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
         console.log(saveHotel)
         saveHotel.reset();
         this.route.navigateByUrl('habitacion')
       }
-      error => console.log(<any>error);
+      error => alert(<any>error);
     })
   }
 

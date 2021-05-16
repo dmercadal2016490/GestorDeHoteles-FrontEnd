@@ -79,4 +79,14 @@ export class RestUserService {
     return this.http.post(this.uri+'hoteles/create/'+idAdmin,params, this.httpOptionsAuth)
       .pipe(map(this.extractData))
   }
+
+  updateUser(usurioActualizar){
+    let params = JSON.stringify(usurioActualizar);
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.getToken()
+    });
+    return this.http.put(this.uri + 'usuarios/' + usurioActualizar._id, params, {headers:headers})
+      .pipe(map(this.extractData))
+  }
 }

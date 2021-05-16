@@ -1,6 +1,6 @@
 <body class="text-center">
     <p>.</p>
-    <div>
+    <form (ngSubmit)="onSubmit()">
         <h1>{{title}}</h1>
         <img src="../../../assets/img/actu.jpg"><hr>
         <h2 class="texto1" for="inputUserName">Username</h2>
@@ -15,7 +15,8 @@
         <h2 class="texto1" for="inputEmail">Correo</h2>
         <input [(ngModel)]="user.email" name="email" #email="ngModel" class="form-control" id="inputEmail" type="text" placeholder="your username">
         <hr>
-        <button type="button" class="btn btn-success col-lg-3 mx-2" routerLink="/updateUser">Actualizar cuenta</button>
+        <button type="submit" class="btn btn-success col-lg-3 mx-2">Actualizar cuenta</button>
         <button type="button" class="btn btn-danger col-lg-3 mx-2" routerLink="/user">Cancelar</button>
-    </div>
+    </form>
     <h2 class="texto3">&copy;Grupo #2</h2>
+</body>    
