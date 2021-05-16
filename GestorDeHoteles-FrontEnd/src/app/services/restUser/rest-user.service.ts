@@ -89,4 +89,13 @@ export class RestUserService {
     return this.http.put(this.uri + 'usuarios/' + usurioActualizar._id, params, {headers:headers})
       .pipe(map(this.extractData))
   }
+
+  deleteUser(idUser){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.getToken()
+    });
+    return this.http.delete(this.uri + 'usuarios/' + idUser, {headers:headers})
+      .pipe(map(this.extractData))
+  }
 }

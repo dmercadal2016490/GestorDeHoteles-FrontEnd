@@ -26,4 +26,19 @@ export class UserComponent implements OnInit {
     this.router.navigateByUrl('index');
   }
 
+  deleteUser(){
+    this.restUser.deleteUser(this.restUser.getUser()._id).subscribe((res:any)=>{
+      if(!res.userRemoved){
+        alert('Usuario eliminado');
+        localStorage.clear();
+        this.router.navigateByUrl('index');
+      }else{
+        alert('Usuario no eliminado')
+        localStorage.clear();
+        this.router.navigateByUrl('index');
+      }
+    },
+    error => alert('Usuario no eliminadon ' + error.error))
+  }
+
 }
