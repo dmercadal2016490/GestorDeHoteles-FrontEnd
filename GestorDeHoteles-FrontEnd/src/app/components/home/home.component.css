@@ -1,0 +1,96 @@
+body{
+    background-image: url('../../../assets/img/beach3.jpg');
+    background-size: cover;
+}
+
+.division1{
+    background-color: white;
+    text-align: center;
+    font-size: 70px;
+    border-radius: 150px;
+    font-family:'Lucida Sans';
+    margin-top: 20px;
+}
+
+hr{
+    color: lightblue;
+    height: 3px;
+}
+
+.texto3{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+}
+
+#cards{
+    margin: 1rem;
+}
+
+.myWidth{
+    width: 25rem;
+    display: inline-block;
+    margin: 1.25rem;
+}
+
+img{
+    height: 60px;
+    width: 60px;
+    margin-left: 130px;
+}
+
+
+button:hover{
+    transition: all 1s;
+    background-color: #da5c14;
+}
+
+.imagen{
+    height: 80px;
+    width: 80px;
+    margin-left: 160px;
+}
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    margin-right: 200px;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+ .texto2{
+     color: blue;
+     font-size: 30px;
+     text-align: center;
+     font-family: 'Gill Sans MT';
+ }
