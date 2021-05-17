@@ -68,7 +68,7 @@ hotelCreado;
         saveHotel.reset();
         this.route.navigateByUrl('habitacion')
       }
-      error => alert(<any>error);
+      error => alert(error.error);
     })
   }
 

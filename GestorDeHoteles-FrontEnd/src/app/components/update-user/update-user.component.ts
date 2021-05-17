@@ -23,9 +23,9 @@ export class UpdateUserComponent implements OnInit {
   onSubmit(){
     delete this.user.password;
     this.restUser.updateUser(this.user).subscribe((res:any)=>{
-      if(res.updateUser){
-        delete res.updateUser.password;
-        localStorage.setItem('user', JSON.stringify(res.updateUser));
+      if(res){
+        delete res.password;
+        localStorage.setItem('user', JSON.stringify(res));
         alert('Usuario actualizado');
         this.router.navigateByUrl('user');
       }else{

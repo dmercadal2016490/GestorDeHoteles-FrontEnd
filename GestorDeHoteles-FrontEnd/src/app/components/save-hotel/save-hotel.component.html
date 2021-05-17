@@ -1,6 +1,6 @@
 <body>
-    <h1>Agregar Hotel</h1>
-    <form #saveHotel="ngForm" (ngSubmit)="onSubmit(saveHotel)">
+    <h1 class="texto1">Agregar Hotel</h1>
+    <form #saveHotel="ngForm" class="division" (ngSubmit)="onSubmit(saveHotel)">
         <div>
             <label>Nombre</label>
             <input [(ngModel)]="hotel.name" name="name" type="text" id="inputName">
