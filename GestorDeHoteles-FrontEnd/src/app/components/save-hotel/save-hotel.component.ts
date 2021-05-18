@@ -55,7 +55,7 @@ hotelCreado;
     console.log(this.adminHotel);
     this.restHotel.saveHotel(this.hotel, this.adminHotel).subscribe((res:any)=>{
       this.hotelCreado = res;
-      if(res.hotel){
+      if(res){
         console.log(saveHotel)
         alert('Hotel creado exitosamente');
         saveHotel.reset();
@@ -63,11 +63,11 @@ hotelCreado;
         saveHotel.reset();
         this.route.navigateByUrl('habitacion')
       }else{
-        alert('Hotel creado exitosamente');
-        localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
+        alert('No se creó el hotel');
+        /*localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
         console.log(saveHotel)
         saveHotel.reset();
-        this.route.navigateByUrl('habitacion')
+        this.route.navigateByUrl('habitacion')*/
       }
       error => alert(error.error);
     })

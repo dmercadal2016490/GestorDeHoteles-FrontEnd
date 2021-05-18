@@ -38,6 +38,4 @@ export class HabitacionComponent implements OnInit {
       }
     })
   }
-  }
-
 }

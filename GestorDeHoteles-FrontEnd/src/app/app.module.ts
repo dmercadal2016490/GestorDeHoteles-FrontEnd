@@ -22,6 +22,7 @@ import { HabitacionComponent } from './components/habitacion/habitacion.componen
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RestUserService } from './services/restUser/rest-user.service';
 import { SearchPipe } from './pipes/search.pipe';
+import { ServiciosHotelComponent } from './components/servicios-hotel/servicios-hotel.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SearchPipe } from './pipes/search.pipe';
     NavbarComponent,
     HabitacionComponent,
     NotFoundComponent,
-    SearchPipe
+    SearchPipe,
+    ServiciosHotelComponent
   ],
   imports: [
     BrowserModule,
