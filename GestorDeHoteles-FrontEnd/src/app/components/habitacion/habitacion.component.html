@@ -3,7 +3,7 @@
     <form (ngSubmit)="onSubmit(saveHabitacion)" #saveHabitacion="ngForm">
         <div>
             <input [(ngModel)]="habitacion.descripcion" type="text" name="descripcion" id="idDescripcion" required>
-            <input type="submit" class="fadeIn fourth" value="Guardar Habitacion" [disabled]="!saveHabitacion.form.valid">
+            <input type="submit" value="Guardar Habitacion" [disabled]="!saveHabitacion.form.valid">
         </div>
     </form>
 </body>
