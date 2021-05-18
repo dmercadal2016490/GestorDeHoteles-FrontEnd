@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Habitacion } from '../../models/habitacion';
 import { RestHabitacionService } from '../../services/restHabitacion/rest-habitacion.service';
 import { RestHotelService } from 'src/app/services/restHotel/rest-hotel.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-habitacion',
@@ -16,7 +17,7 @@ export class HabitacionComponent implements OnInit {
   hotelId;
   idHotel;
 
-  constructor(private restHotel: RestHotelService, private restHabitacion: RestHabitacionService) {
+  constructor(private restHotel: RestHotelService, private restHabitacion: RestHabitacionService, private route: Router) {
     this.habitacion = new Habitacion('disponible','',[]);
   }
 
@@ -33,6 +34,7 @@ export class HabitacionComponent implements OnInit {
         form.reset()
         this.room = res;
         localStorage.setItem('habitacion', JSON.stringify(this.room))
+        this.route.navigateByUrl('servicio')
       }else{
         alert('La habitación no se creó')
       }

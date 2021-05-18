@@ -1,1 +1,20 @@
-<p>servicios-hotel works!</p>
+<body>
+    <h1>Agregar un servicio</h1>
+    <form (ngSubmit)="onSubmit(saveServicio)" #saveServicio="ngForm">
+        <div>
+            <label>Tipo de servicio:</label>
+            <input [(ngModel)]="servicio.tipoServicio" name="tipoServicio" type="text" required>
+        </div>
+        <div>
+            <label>Precio:</label>
+            <input [(ngModel)]="servicio.precio" name="precio" type="number" required>
+        </div>
+        <div>
+            <label>Descripción</label>
+            <input [(ngModel)]="servicio.descripcion" name="desc" type="text" required>
+        </div>
+        <div>
+            <input type="submit" value="Agregar" [disabled]="!saveServicio.form.valid">
+        </div>
+    </form>
+</body>
