@@ -1,8 +1,9 @@
 <body>
     <h1>Descripción de habitación</h1>
-    <form>
+    <form (ngSubmit)="onSubmit(saveHabitacion)" #saveHabitacion="ngForm">
         <div>
-            <input type="text">
+            <input [(ngModel)]="habitacion.descripcion" type="text" name="descripcion" id="idDescripcion" required>
+            <input type="submit" class="fadeIn fourth" value="Guardar Habitacion" [disabled]="!saveHabitacion.form.valid">
         </div>
     </form>
 </body>

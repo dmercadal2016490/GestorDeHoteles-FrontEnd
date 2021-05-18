@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { RestUserService } from '../../services/restUser/rest-user.service';
 import { User } from '../../models/user';
 import { Hotel } from '../../models/hotel';
 import { Router } from '@angular/router';
+import { RestHotelService } from 'src/app/services/restHotel/rest-hotel.service';
+import { RestUserService } from 'src/app/services/restUser/rest-user.service';
 
 @Component({
   selector: 'app-save-hotel',
@@ -22,7 +23,7 @@ hotelCreado;
   message: any;
 
 
-  constructor(private restUser: RestUserService, private route: Router) { 
+  constructor(private restHotel: RestHotelService, private restUser: RestUserService, private route: Router) { 
 
     this.user = new User('','','','','','ROL_CLIENT',[],[]);
     this.hotel = new Hotel('','','','',[],[],[],[],[]);
@@ -52,7 +53,7 @@ hotelCreado;
       }
     });
     console.log(this.adminHotel);
-    this.restUser.saveHotel(this.hotel, this.adminHotel).subscribe((res:any)=>{
+    this.restHotel.saveHotel(this.hotel, this.adminHotel).subscribe((res:any)=>{
       this.hotelCreado = res;
       if(res.hotel){
         console.log(saveHotel)

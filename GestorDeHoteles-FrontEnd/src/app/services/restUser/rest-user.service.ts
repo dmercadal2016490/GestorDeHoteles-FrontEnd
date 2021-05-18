@@ -73,13 +73,6 @@ export class RestUserService {
       .pipe(map(this.extractData));
   }
 
-  saveHotel(hotel, idAdmin){
-    console.log(hotel)
-    let params = JSON.stringify(hotel)
-    return this.http.post(this.uri+'hoteles/create/'+idAdmin,params, this.httpOptionsAuth)
-      .pipe(map(this.extractData))
-  }
-
   updateUser(usurioActualizar){
     let params = JSON.stringify(usurioActualizar);
     let headers = new HttpHeaders({
