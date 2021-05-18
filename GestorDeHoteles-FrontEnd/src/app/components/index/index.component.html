@@ -7,9 +7,9 @@
         <p class="texto2">A un increible precio</p>
         <p class="texto2">Descubre destinos impresionantes</p>
         <p class="texto2">Crea una cuenta para ver nuestras ofertas</p><br><br>
-        <a routerLink="/register"><button>Registrate</button></a><br><br>
-        <p class="texto3">¿Ya tienes una cuenta?</p>
-        <a routerLink="/login"><button>Iniciar sesion</button></a><br><br>
+        <a routerLink="/register"><button *ngIf="token == null || token == undefined">Registrate</button></a><br><br>
+        <p class="texto3" *ngIf="token == null || token == undefined">¿Ya tienes una cuenta?</p>
+        <a routerLink="/login"><button *ngIf="token == null || token == undefined">Iniciar sesion</button></a><br><br>
     </div>
     
     <h2 class="texto3">&copy;Grupo #2</h2>
