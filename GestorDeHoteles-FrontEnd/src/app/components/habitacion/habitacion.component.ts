@@ -34,10 +34,10 @@ export class HabitacionComponent implements OnInit {
         form.reset()
         this.room = res;
         localStorage.setItem('habitacion', JSON.stringify(this.room))
-        this.route.navigateByUrl('servicio')
+        this.route.navigateByUrl('servicios')
       }else{
         alert('La habitación no se creó')
       }
-    })
+    },error => console.log(<any>error))
   }
 }

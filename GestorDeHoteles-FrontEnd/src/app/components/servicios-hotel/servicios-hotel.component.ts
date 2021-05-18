@@ -39,6 +39,6 @@ export class ServiciosHotelComponent implements OnInit {
       }else{
         alert('No se creó la habitación')
       }
-    })
+    }, error => console.log(<any>error))
   }
 }
