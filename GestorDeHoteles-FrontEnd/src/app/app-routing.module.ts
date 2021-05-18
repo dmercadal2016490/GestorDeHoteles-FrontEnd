@@ -29,12 +29,9 @@ const routes: Routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'habitacion', component: HabitacionComponent},
   {path: 'user', canActivate:[LoggedGuard],component: UserComponent},
-<<<<<<< HEAD
   {path: 'updateUser', canActivate: [LoggedGuard], component: UpdateUserComponent},
-=======
   {path: 'updateUser', canActivate: [AdminGuard], component: UpdateUserComponent},
   {path: 'servicios', component: ServiciosHotelComponent},
->>>>>>> master
   {path: '**', component:NotFoundComponent}
 ];
 
