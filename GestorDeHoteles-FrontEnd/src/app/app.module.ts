@@ -21,6 +21,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HabitacionComponent } from './components/habitacion/habitacion.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RestUserService } from './services/restUser/rest-user.service';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { RestUserService } from './services/restUser/rest-user.service';
     UpdateUserComponent,
     NavbarComponent,
     HabitacionComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
