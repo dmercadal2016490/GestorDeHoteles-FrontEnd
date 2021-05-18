@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit, DoCheck {
   token: string;
   user;
   uri;
+  search;
 
   constructor(private router:Router, private restUser: RestUserService) { }
 

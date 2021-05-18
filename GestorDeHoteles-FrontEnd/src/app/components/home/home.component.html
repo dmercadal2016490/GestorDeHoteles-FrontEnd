@@ -4,13 +4,14 @@
     <p>Hoteles disponibles</p>
 </div><hr>
 <div id="cards">
-  <div class="card myWidth text-white bg-secondary" *ngFor="let hotel of hotels">
+  <div class="card myWidth text-white bg-secondary" *ngFor="let hotel of hotels | search:search">
     <div class="card myWidth text-white bg-secondary">
         <div class="card-body">
           <img src="../../../assets/img/hotel.png"><br><br>
           <h5 class="card-title">{{hotel.name}}</h5><hr>
           <h6 class="card-subtitle">{{hotel.direccion}}</h6><hr>
           <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="obtenerData(hotel)">Ver Hotel</button>
+          <button *ngIf="user.rol == 'ROL_ADMINAPP'" class="btn btn-success">Actualizar</button>
         </div>
     </div>
   </div>
