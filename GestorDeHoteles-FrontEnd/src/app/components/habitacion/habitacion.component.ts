@@ -17,33 +17,27 @@ export class HabitacionComponent implements OnInit {
   idHotel;
 
   constructor(private restHotel: RestHotelService, private restHabitacion: RestHabitacionService) {
-    this.habitacion = new Habitacion('','','',[]);
+    this.habitacion = new Habitacion('disponible','',[]);
   }
 
   ngOnInit(): void {
-    this.hotel = this.restHotel.getHotel();
     this.token = this.restHotel.getToken();
+    this.hotel = JSON.parse(localStorage.getItem('hotel'))
+    console.log(this.hotel._id)
   }
 
   onSubmit(form){
-    let hotel = JSON.parse(localStorage.getItem('hotel'))
-    
-    hotel.forEach(elemento => {
-      if(elemento._id.includes(this.hotelId)){
-        this.idHotel = elemento._id;
-      }
-    });
-    console.log(this.idHotel);
-    /*this.restHabitacion.saveHabitacion(this.idHotel, this.habitacion).subscribe((res: any)=>{
-      if(res.roomCreated){
+    this.restHabitacion.saveHabitacion(this.hotel._id, this.habitacion).subscribe((res: any)=>{
+      if(res){
         alert('Habitación creada')
         form.reset()
-        this.room = res.roomCreated;
+        this.room = res;
         localStorage.setItem('habitacion', JSON.stringify(this.room))
       }else{
         alert('La habitación no se creó')
       }
-    })*/
+    })
+  }
   }
 
 }
