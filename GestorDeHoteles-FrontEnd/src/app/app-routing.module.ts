@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'navbar', component: NavbarComponent},
   {path: 'habitacion', component: HabitacionComponent},
   {path: 'user', canActivate:[LoggedGuard],component: UserComponent},
-  {path: 'updateUser', canActivate: [AdminGuard], component: UpdateUserComponent},
+  {path: 'updateUser', canActivate: [LoggedGuard], component: UpdateUserComponent},
   {path: '**', component:NotFoundComponent}
 ];
 
