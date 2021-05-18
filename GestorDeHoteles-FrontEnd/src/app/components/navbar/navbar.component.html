@@ -20,7 +20,8 @@
             Más opciones
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" routerLink="/saveHotel">Agregar Hoteles</a></li>
+            <li *ngIf="user.rol == 'ROL_ADMINAPP'"><a class="dropdown-item" routerLink="/saveHotel">Agregar Hoteles</a></li>
+            <li *ngIf="user.rol == 'ROL_ADMINAPP'"><a class="dropdown-item" routerLink="/saveUser">Agregar Usuarios</a></li>
             <li><a class="dropdown-item" routerLink="/user">Perfil</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { RestUserService } from '../services/restUser/rest-user.service';
 
@@ -16,14 +16,14 @@ export class AdminGuard implements CanActivate {
       }else{
         let token = this.restUser.getToken();
         if(user && token.length > 0){
-          this.router.navigateByUrl('index');
+          this.router.navigateByUrl('home');
           return false;
         }else{
           this.router.navigateByUrl('');
           return false;
         }
+        
       }
-    
   }
 
   constructor(private restUser:RestUserService, private router:Router){}
