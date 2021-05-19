@@ -17,6 +17,7 @@ import { UpdateUserComponent } from './components/update-user/update-user.compon
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ServiciosHotelComponent } from './components/servicios-hotel/servicios-hotel.component';
 import { EventosComponent } from './components/eventos/eventos.component';
+import { HotelComponent } from './components/hotel/hotel.component';
 
 
 
@@ -26,7 +27,7 @@ const routes: Routes = [
   {path:'login', canActivate:[LoggedOutGuard],component: LoginComponent},
   {path:'register', canActivate:[LoggedOutGuard],component: RegisterComponent},
   {path: 'home', canActivate:[LoggedGuard], component:HomeComponent},
-  {path: 'saveHotel', canActivate: [AdminGuard], component: SaveHotelComponent},
+  {path: 'saveHotel',canActivate: [AdminGuard], component: SaveHotelComponent},
   {path: 'saveUser', canActivate: [AdminGuard], component: SaveUserComponent},
   {path: 'navbar', component: NavbarComponent},
   {path: 'habitacion', canActivate: [AdminHotelGuard], component: HabitacionComponent},
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path: 'updateUser', canActivate: [LoggedGuard], component: UpdateUserComponent},
   {path: 'updateUser', canActivate: [AdminGuard], component: UpdateUserComponent},
   {path: 'servicios', canActivate: [AdminHotelGuard], component: ServiciosHotelComponent},
-  {path: 'eventos', component: EventosComponent},
+  {path: 'eventos',canActivate: [AdminHotelGuard], component: EventosComponent},
+  {path: 'hotel', canActivate: [AdminHotelGuard],component: HotelComponent},
   {path: '**', component:NotFoundComponent}
 ];
 

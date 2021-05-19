@@ -61,13 +61,9 @@ hotelCreado;
         saveHotel.reset();
         localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
         saveHotel.reset();
-        this.route.navigateByUrl('habitacion')
+        this.route.navigateByUrl('home')
       }else{
         alert('No se creó el hotel');
-        /*localStorage.setItem('hotel', JSON.stringify(this.hotelCreado))
-        console.log(saveHotel)
-        saveHotel.reset();
-        this.route.navigateByUrl('habitacion')*/
       }
       error => alert(error.error);
     })

@@ -1,1 +1,22 @@
-<p>eventos works!</p>
+<body>
+    <h1>Agregar un evento</h1>
+    <form #saveEvento="ngForm" (ngSubmit)="onSubmit(saveEvento)">
+        <div>
+            <label>Tipo de Evento:</label>
+            <input [(ngModel)]="evento.tipoEvento" name="tipoEvento" type="text">
+        </div>
+        <div>
+            <label>Fecha:</label>
+            <input [(ngModel)]="evento.fecha" name="fecha" type="date">
+        </div>
+        <div>
+            <label>Horario:</label>
+            <input type="time" [(ngModel)]="evento.horario" name="horario">
+        </div>
+        <div>
+            <label>Descripción</label>
+            <input type="text" [(ngModel)]="evento.descripcion" name="descripcion">
+        </div>
+        <input type="submit">
+    </form>
+</body>

@@ -12,6 +12,7 @@
           <h5 class="card-title">{{hotel.name}}</h5><hr>
           <h6 class="card-subtitle">{{hotel.direccion}}</h6><hr>
           <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="obtenerData(hotel)">Ver Hotel</button>
+          <button *ngIf="user._id == hotel.admin" class="btn btn-success" routerLink="/hotel" (click)="obtenerData(hotel)">Administrar</button>
         </div>
     </div>
   </div>
@@ -36,9 +37,9 @@
             <h2>Ubicado en: </h2>
             <h3>{{hotelSelected.direccion}}</h3><hr>
             <p *ngIf="user.rol == 'ROL_ADMINHOTEL' || user.rol == 'ROL_ADMINAPP'">Debes ser cliente para reservar y ver habitaciones</p>
-            <p class="texto2">Califica el hotel</p>
+            <p *ngIf="user.rol == 'ROL_CLIENT'" class="texto2">Califica el hotel</p>
             <form>
-                <p class="clasificacion">
+                <p class="clasificacion" *ngIf="user.rol == 'ROL_CLIENT'">
                   <input id="radio1" type="radio" name="estrellas" value="5"><!--
                   --><label for="radio1">★</label><!--
                   --><input id="radio2" type="radio" name="estrellas" value="4"><!--
@@ -52,12 +53,9 @@
                 </p>
             </form>
             <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button *ngIf="user.rol == 'ROL_CLIENT' || user.rol == 'ROL_ADMINAPP'" type="button" class="btn btn-primary">Habitaciones</button>
-          <button *ngIf="user._id == hotelSelected.admin" type="button" class="btn btn-primary">Add Habitaciones</button>
-          <button *ngIf="user._id == hotelSelected.admin" type="button" class="btn btn-primary">Add Evento</button>
-          <button *ngIf="user._id == hotelSelected.admin" class="btn btn-success">Actualizar</button>
-          <button *ngIf="user.rol == 'ROL_CLIENT'" type="button" class="btn btn-success">Reservar</button>
+          <button data-bs-dismiss="modal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button data-bs-dismiss="modal" *ngIf="user.rol == 'ROL_CLIENT' || user.rol == 'ROL_ADMINAPP'" type="button" class="btn btn-primary">Habitaciones</button>
+          <button data-bs-dismiss="modal" *ngIf="user.rol == 'ROL_CLIENT'" type="button" class="btn btn-success">Reservar</button>
         </div>
       </div>
     </div>

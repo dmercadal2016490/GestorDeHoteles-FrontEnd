@@ -24,6 +24,7 @@ import { RestUserService } from './services/restUser/rest-user.service';
 import { SearchPipe } from './pipes/search.pipe';
 import { ServiciosHotelComponent } from './components/servicios-hotel/servicios-hotel.component';
 import { EventosComponent } from './components/eventos/eventos.component';
+import { HotelComponent } from './components/hotel/hotel.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { EventosComponent } from './components/eventos/eventos.component';
     NotFoundComponent,
     SearchPipe,
     ServiciosHotelComponent,
-    EventosComponent
+    EventosComponent,
+    HotelComponent
   ],
   imports: [
     BrowserModule,
