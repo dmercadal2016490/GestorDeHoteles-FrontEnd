@@ -53,11 +53,11 @@
             </form>
             <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button *ngIf="user.rol == 'ROL_CLIENT' || user.rol == 'ROL_ADMINAPP'" type="button" class="btn btn-primary">Habitaciones</button>
-          <button *ngIf="user._id == hotelSelected.admin" type="button" class="btn btn-primary">Add Habitaciones</button>
-          <button *ngIf="user._id == hotelSelected.admin" type="button" class="btn btn-primary">Add Evento</button>
-          <button *ngIf="user._id == hotelSelected.admin" class="btn btn-success">Actualizar</button>
-          <button *ngIf="user.rol == 'ROL_CLIENT'" type="button" class="btn btn-success">Reservar</button>
+          <button data-bs-dismiss="modal" *ngIf="user.rol == 'ROL_CLIENT' || user.rol == 'ROL_ADMINAPP'" type="button" class="btn btn-primary">Habitaciones</button>
+          <button data-bs-dismiss="modal" *ngIf="user._id == hotelSelected.admin" type="button" class="btn btn-primary">Add Habitaciones</button>
+          <button data-bs-dismiss="modal" *ngIf="user._id == hotelSelected.admin" type="button" class="btn btn-primary">Add Evento</button>
+          <button data-bs-dismiss="modal" *ngIf="user._id == hotelSelected.admin" class="btn btn-success">Actualizar</button>
+          <button data-bs-dismiss="modal" *ngIf="user.rol == 'ROL_CLIENT'" type="button" class="btn btn-success">Reservar</button>
         </div>
       </div>
     </div>
