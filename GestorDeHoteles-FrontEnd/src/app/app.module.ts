@@ -23,6 +23,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { RestUserService } from './services/restUser/rest-user.service';
 import { SearchPipe } from './pipes/search.pipe';
 import { ServiciosHotelComponent } from './components/servicios-hotel/servicios-hotel.component';
+import { EventosComponent } from './components/eventos/eventos.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ServiciosHotelComponent } from './components/servicios-hotel/servicios-
     HabitacionComponent,
     NotFoundComponent,
     SearchPipe,
-    ServiciosHotelComponent
+    ServiciosHotelComponent,
+    EventosComponent
   ],
   imports: [
     BrowserModule,
