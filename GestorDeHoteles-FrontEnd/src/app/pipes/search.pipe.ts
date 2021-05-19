@@ -9,8 +9,9 @@ export class SearchPipe implements PipeTransform {
     if(search == undefined){
       return hotels;
     }else{
-      return hotels.filter(hotels=>{
-        return hotels.name.toLowerCase().includes(search.toLowerCase())
+      return hotels.filter(hotel=>{
+        return hotel.name.toLowerCase().includes(search.toLowerCase());
+        return hotel.direccion.toLowerCase().includes(search.toLowerCase())
       })
     }
   }

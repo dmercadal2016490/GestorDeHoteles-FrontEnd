@@ -1,5 +1,5 @@
 body{
-    background-image: url('../../../assets/img/beach3.jpg');
+    background-image: url('../../../assets/img/beach.jpg');
     background-size: cover;
 }
 
@@ -40,6 +40,9 @@ img{
     margin-left: 130px;
 }
 
+button{
+  margin-right: 10px;
+}
 
 button:hover{
     transition: all 1s;
@@ -94,3 +97,10 @@ button:hover{
      text-align: center;
      font-family: 'Gill Sans MT';
  }
+
+input{
+  border-radius: 150px;
+  border-style: solid;
+  font-size: 20px;
+  text-align: center;
+}
