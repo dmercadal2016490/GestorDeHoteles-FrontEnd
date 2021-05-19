@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
   }
 
   obtenerData(hotel){
+    localStorage.setItem('hotelSelected', JSON.stringify(hotel))
     this.hotelSelected = hotel
   }
 
