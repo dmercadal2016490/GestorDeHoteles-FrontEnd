@@ -18,6 +18,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ServiciosHotelComponent } from './components/servicios-hotel/servicios-hotel.component';
 import { EventosComponent } from './components/eventos/eventos.component';
 import { HotelComponent } from './components/hotel/hotel.component';
+import { ListUserComponent } from './components/list-user/list-user.component';
 
 
 
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path: 'servicios', canActivate: [AdminHotelGuard], component: ServiciosHotelComponent},
   {path: 'eventos',canActivate: [AdminHotelGuard], component: EventosComponent},
   {path: 'hotel', canActivate: [AdminHotelGuard],component: HotelComponent},
+  {path: 'listUsers', canActivate: [AdminGuard], component:ListUserComponent},
   {path: '**', component:NotFoundComponent}
 ];
 

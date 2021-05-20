@@ -1,0 +1,20 @@
+<p>list-user works!</p>
+<body>
+  <div id="cards">
+      <h1 class="text-center">Users in the database</h1>
+      <hr>
+      <form class="form-inline justify-content-center">
+          <div class="form-group">
+              <input [(ngModel)]="search2" type="search" name="search2" class="form-control-lg" placeholder="search by username">
+          </div>
+      </form>
+      <div class="card myWidth text-white bg-secondary" *ngFor="let user of users | search2:search2">
+          <div class="card-body">
+            <h5 class="card-title">{{user.name}} | {{user.username}}</h5><hr>
+            <h6 class="card-subtitle">{{user.lastname}}</h6><hr>
+            <h6 class="card-subtitle">{{user.email}}</h6><hr>
+            <p class="card-text">{{user.rol}}</p>
+          </div>
+        </div>
+  </div>
+  </body>

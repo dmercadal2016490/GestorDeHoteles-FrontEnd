@@ -1,0 +1,23 @@
+body{
+  background-image: url('../../../assets/img/beach.jpg');
+  background-size: cover;
+}
+
+#cards{
+  margin: 1rem;
+}
+
+.myWidth{
+  width: 18rem;
+  display: inline-block;
+  margin: 1.25rem;
+}
+
+input{
+  border-radius: 150px;
+  border-style: solid;
+  font-size: 20px;
+  text-align: center;
+  width: 400px;
+  margin-left: 35%;
+}

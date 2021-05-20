@@ -22,6 +22,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li *ngIf="user.rol == 'ROL_ADMINAPP'"><a class="dropdown-item" routerLink="/saveHotel">Agregar Hoteles</a></li>
             <li *ngIf="user.rol == 'ROL_ADMINAPP'"><a class="dropdown-item" routerLink="/saveUser">Agregar Usuarios</a></li>
+            <li *ngIf="user.rol == 'ROL_ADMINAPP'"><a class="dropdown-item" routerLink="/listUsers">Listar Usuarios</a></li>
             <li><a class="dropdown-item" routerLink="/user">Perfil</a></li>
             <li><a class="dropdown-item" *ngIf="user.rol == 'ROL_ADMINHOTEL'" routerLink="/servicios">Agregar Servicio</a></li>
             <li><hr class="dropdown-divider"></li>

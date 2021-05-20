@@ -91,4 +91,8 @@ export class RestUserService {
     return this.http.delete(this.uri + 'usuarios/' + idUser, {headers:headers})
       .pipe(map(this.extractData))
   }
+  getUsers(){
+    return this.http.get(this.uri + 'usuarios/')
+      .pipe(map(this.extractData))
+  }
 }
