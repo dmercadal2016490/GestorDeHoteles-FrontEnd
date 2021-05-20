@@ -1,7 +1,21 @@
 <body>
-    <h1>Mis hoteles</h1>
-    <form>
-        <label>Escoge tu hotel</label>
-        <select></select>
+    <h1>{{hotel.name}}</h1>
+
+    <form (ngSubmit)="onSubmit()" #adminHotel="ngForm">
+        <div>
+            <label>Nombre:</label>
+            <input name="name" [(ngModel)]="hotel.name">
+        </div>
+        <div>
+            <label>Dirección:</label>
+            <input name="direccion" [(ngModel)]="hotel.direccion">
+        </div>
+        <div>
+            <label>Cantidad de Solicitudes</label>
+            <input name="cantidad" [(ngModel)]="hotel.solicitud" disabled>
+        </div>
     </form>
+    <input type="submit">
+    <button routerLink="/habitacion">Agregar Habitaciones</button>
+    <button routerLink="/eventos">Agregar Eventos</button>
 </body>

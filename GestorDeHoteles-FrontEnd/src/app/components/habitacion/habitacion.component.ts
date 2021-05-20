@@ -3,6 +3,7 @@ import { Habitacion } from '../../models/habitacion';
 import { RestHabitacionService } from '../../services/restHabitacion/rest-habitacion.service';
 import { RestHotelService } from 'src/app/services/restHotel/rest-hotel.service';
 import { Router } from '@angular/router'
+import { Hotel } from '../../models/hotel'
 
 @Component({
   selector: 'app-habitacion',
@@ -11,20 +12,19 @@ import { Router } from '@angular/router'
 })
 export class HabitacionComponent implements OnInit {
   habitacion:Habitacion;
+  hotelSelected: Hotel;
+  hotel;
   public token;
   public room = [];
-  public hotel;
-  hotelId;
-  idHotel;
 
   constructor(private restHotel: RestHotelService, private restHabitacion: RestHabitacionService, private route: Router) {
     this.habitacion = new Habitacion('disponible','',[]);
+    this.hotelSelected = new Hotel('','','',null,null,null,null,null,null);
   }
 
   ngOnInit(): void {
     this.token = this.restHotel.getToken();
-    this.hotel = JSON.parse(localStorage.getItem('hotel'))
-    console.log(this.hotel._id)
+    this.hotel = JSON.parse(localStorage.getItem('hotelSelected'));
   }
 
   onSubmit(form){
