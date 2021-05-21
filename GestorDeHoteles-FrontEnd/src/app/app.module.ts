@@ -30,6 +30,7 @@ import { Search2Pipe } from './pipes/search2.pipe';
 import { FacturasComponent } from './components/facturas/facturas.component';
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
 import { UpdateHotelComponent } from './components/update-hotel/update-hotel.component';
+import { HabitacionesComponent } from './components/habitaciones/habitaciones.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { UpdateHotelComponent } from './components/update-hotel/update-hotel.com
     Search2Pipe,
     FacturasComponent,
     ReservacionComponent,
-    UpdateHotelComponent
+    UpdateHotelComponent,
+    HabitacionesComponent,
   ],
   imports: [
     BrowserModule,

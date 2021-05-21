@@ -73,4 +73,14 @@ export class RestHotelService {
     return this.http.put(this.uri+'hoteles/'+hotelSelected._id, params, {headers: headers})
     .pipe(map(this.extractData))
   }
+
+  getHotelSelected(){
+    let hotel = JSON.parse(localStorage.getItem('hotelSelected'));
+    if(hotel != undefined || hotel != null){
+      this.hotel = hotel
+    }else{
+      this.hotel = null;
+    }
+    return this.hotel;
+  }
 }

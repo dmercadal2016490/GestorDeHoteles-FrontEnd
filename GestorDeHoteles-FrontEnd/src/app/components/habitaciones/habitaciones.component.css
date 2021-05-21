@@ -1,0 +1,30 @@
+body{
+    background-image: url('../../../assets/img/beach.jpg');
+    background-size: cover;
+}
+
+#cards{
+    margin: 1rem;
+}
+  
+.myWidth{
+    width: 18rem;
+    display: inline-block;
+    margin: 1.25rem;
+}
+
+.division1{
+    background-color: white;
+    text-align: center;
+    font-size: 70px;
+    border-radius: 150px;
+    font-family:'Lucida Sans';
+    margin-top: 20px;
+}
+
+.texto3{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+}

@@ -1,0 +1,15 @@
+<body>
+<div class="division1"><hr>
+    <p class="card-title">{{hotel.name}}</p>
+</div>    
+<div id="cards">
+    <div class="card myClass" style="width: 18rem;" *ngFor="let room of rooms ; let i = index">
+        <img src="../../../assets/img/room.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">{{room.descripcion}}</p><hr>
+          <p class="card-text">Estado: {{room.disponibilidad}}</p>
+        </div>
+    </div>
+</div>
+<h2 class="texto3">&copy;Grupo #2</h2>
+</body>
