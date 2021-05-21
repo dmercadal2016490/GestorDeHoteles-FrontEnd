@@ -1,0 +1,26 @@
+<body>
+    <hr>
+    <!--<form (ngSubmit)="onSubmit()">-->
+    <form>
+        <h1><em>Reservación</em></h1>
+        <h2 for="inputFechaIngreso">Fecha Ingreso</h2>
+            <input [(ngModel)]="reservacion.fechaIngreso" name="fechaIngreso" #username="ngModel" class="form-control" id="inputUserName" type="text" placeholder="Price">
+        <hr>
+        <h2 for="inputFechaSalida">Fecha Salida</h2>
+            <input [(ngModel)]="reservacion.fechaSalida" name="fechaSalida" #name="ngModel" class="form-control" id="inputName" type="text" placeholder="Your name">
+        <hr>
+        <h2 for="inputNumeroTarjeta">Número de Tarjeta</h2>
+            <input [(ngModel)]="reservacion.numeroTarjeta" name="numeroTarjeta" #name="ngModel" class="form-control" id="inputName" type="text" placeholder="Your credit card">
+        <hr>
+        <h2 for="inputTotalPagar">Total a Pagar</h2>
+            <input [(ngModel)]="reservacion.totalPagar" name="totalPagar" #name="ngModel" class="form-control" id="inputName" type="text" placeholder="Price">
+        <hr>
+        <h2 for="inputRoom">Habitación</h2>
+            <input [(ngModel)]="reservacion.room" name="room" #name="ngModel" class="form-control" id="inputName" type="text" placeholder="Room">
+        <hr>
+        <button type="submit" class="btn btn-success col-lg-3 mx-2">Aceptar</button>
+        <hr>
+    </form>
+    <h2 class="creditos">&copy;Grupo #2</h2>
+    <hr>
+</body>

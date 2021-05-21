@@ -1,0 +1,20 @@
+<body>
+    <hr>
+    <!--<form (ngSubmit)="onSubmit()">-->
+    <form>
+        <h1><em>Factura</em></h1>
+        <h2 for="inputUserName">Total Pagar</h2>
+            <input [(ngModel)]="facturas.totalPagar" name="totalPagar" #username="ngModel" class="form-control" id="inputTotalPagar" type="text" placeholder="Price">
+        <hr>
+        <h2 for="inputName">Usuario</h2>
+            <input [(ngModel)]="facturas.usuarioPagar" name="usuarioPagar" #name="ngModel" class="form-control" id="inputUsuarioPagar" type="text" placeholder="Your name">
+        <hr>
+
+        <button type="submit" class="btn btn-success col-lg-3 mx-2">Aceptar</button>
+        <hr>
+    </form>
+    <hr>
+    <h2 class="creditos">&copy;Grupo #2</h2>
+    <hr>
+    <hr>
+</body>

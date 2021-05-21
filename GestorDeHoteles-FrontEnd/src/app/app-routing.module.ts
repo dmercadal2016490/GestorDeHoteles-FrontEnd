@@ -19,6 +19,8 @@ import { ServiciosHotelComponent } from './components/servicios-hotel/servicios-
 import { EventosComponent } from './components/eventos/eventos.component';
 import { HotelComponent } from './components/hotel/hotel.component';
 import { ListUserComponent } from './components/list-user/list-user.component';
+import { FacturasComponent } from './components/facturas/facturas.component';
+import { ReservacionComponent } from './components/reservacion/reservacion.component';
 
 
 
@@ -37,6 +39,8 @@ const routes: Routes = [
   {path: 'updateUser', canActivate: [AdminGuard], component: UpdateUserComponent},
   {path: 'servicios', canActivate: [AdminHotelGuard], component: ServiciosHotelComponent},
   {path: 'eventos',canActivate: [AdminHotelGuard], component: EventosComponent},
+  {path: 'facturas', canActivate:[LoggedGuard], component: FacturasComponent},
+  {path: 'reservacion', canActivate:[LoggedGuard], component: ReservacionComponent},
   {path: 'hotel', canActivate: [AdminHotelGuard],component: HotelComponent},
   {path: 'listUsers', canActivate: [AdminGuard], component:ListUserComponent},
   {path: '**', component:NotFoundComponent}

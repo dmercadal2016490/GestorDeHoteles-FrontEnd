@@ -1,0 +1,40 @@
+body{
+    text-align: center;
+    place-items: center;
+    background-image: url("../../../assets/img/beach.jpg");
+    background-size: cover;
+    padding: 0;
+    margin:0;
+}
+
+form{
+    
+    background-color: rgba(255, 243, 78, 0.377);
+    width: 40%;
+    margin-top: 1em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+hr{
+    clear: both;
+    visibility: hidden;
+}
+
+input{
+    width: 70%;
+    place-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h2{
+    font-size: 1.75em;
+}
+
+.creditos{
+    margin-top: 1em;
+    color:aliceblue;
+    -webkit-text-stroke:0.5px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+}
