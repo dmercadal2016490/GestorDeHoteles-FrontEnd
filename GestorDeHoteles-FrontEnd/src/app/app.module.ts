@@ -31,6 +31,7 @@ import { FacturasComponent } from './components/facturas/facturas.component';
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
 import { UpdateHotelComponent } from './components/update-hotel/update-hotel.component';
 import { HabitacionesComponent } from './components/habitaciones/habitaciones.component';
+import { ListEventosComponent } from './components/list-eventos/list-eventos.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { HabitacionesComponent } from './components/habitaciones/habitaciones.co
     ReservacionComponent,
     UpdateHotelComponent,
     HabitacionesComponent,
+    ListEventosComponent,
   ],
   imports: [
     BrowserModule,

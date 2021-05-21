@@ -23,6 +23,7 @@ import { FacturasComponent } from './components/facturas/facturas.component';
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
 import { UpdateHotelComponent } from './components/update-hotel/update-hotel.component';
 import { HabitacionesComponent } from './components/habitaciones/habitaciones.component';
+import { ListEventosComponent } from './components/list-eventos/list-eventos.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path: 'listUsers', canActivate: [AdminGuard], component:ListUserComponent},
   {path: 'updateHotel', canActivate: [AdminHotelGuard], component: UpdateHotelComponent},
   {path:'habitaciones', component:HabitacionesComponent},
+  {path:'listEventos', component:ListEventosComponent},
   {path: '**', component:NotFoundComponent}
 ];
 

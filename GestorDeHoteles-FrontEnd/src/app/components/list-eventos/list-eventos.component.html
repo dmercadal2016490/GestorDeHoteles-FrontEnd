@@ -1,0 +1,16 @@
+<body>
+<div class="division1"><hr>
+    <p class="card-title">{{hotel.name}}</p>
+</div>    
+<div id="cards">
+    <div class="card myWidth text-white bg-secondary" *ngFor="let event of events ; let i = index">
+        <img src="../../../assets/img/event.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-title">{{event.tipoEvento}}</p><hr>
+          <p class="card-subtitle">{{event.fecha}}</p>
+          <p class="card-title">{{event.horario}}</p><hr>
+          <p class="card-title">{{event.descripcion}}</p><hr>
+        </div>
+    </div>
+</div>
+<h2 class="texto3">&copy;Grupo #2</h2>
