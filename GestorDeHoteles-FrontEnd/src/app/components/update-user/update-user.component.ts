@@ -26,8 +26,7 @@ export class UpdateUserComponent implements OnInit {
       if(res){
         delete res.password;
         localStorage.setItem('user', JSON.stringify(res));
-        alert('Usuario actualizado');
-        this.router.navigateByUrl('user');
+        alert('Hotel actualizado');
       }else{
         alert('Usuario actualizado en base de datos');
         this.restUser.getUser();

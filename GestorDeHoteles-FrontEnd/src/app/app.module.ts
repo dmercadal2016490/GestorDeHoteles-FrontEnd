@@ -29,6 +29,7 @@ import { ListUserComponent } from './components/list-user/list-user.component';
 import { Search2Pipe } from './pipes/search2.pipe';
 import { FacturasComponent } from './components/facturas/facturas.component';
 import { ReservacionComponent } from './components/reservacion/reservacion.component';
+import { UpdateHotelComponent } from './components/update-hotel/update-hotel.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ReservacionComponent } from './components/reservacion/reservacion.compo
     ListUserComponent,
     Search2Pipe,
     FacturasComponent,
-    ReservacionComponent
+    ReservacionComponent,
+    UpdateHotelComponent
   ],
   imports: [
     BrowserModule,

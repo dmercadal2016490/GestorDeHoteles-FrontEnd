@@ -23,6 +23,7 @@ export class RestHotelService {
   public user;
   public token;
   public hotel;
+
   private extractData(res: Response){
     let body = res;
     return body || [] || {};
@@ -46,10 +47,30 @@ export class RestHotelService {
       .pipe(map(this.extractData))
   }
 
+  getHotelData(){
+    let hotel = JSON.parse(localStorage.getItem('hotelSelected'));
+    if(hotel != undefined || hotel != null){
+      this.hotel = hotel
+    }else{
+      this.hotel = null;
+    }
+    return this.hotel;
+  }
+
   saveHotel(hotel, idAdmin){
     console.log(hotel)
     let params = JSON.stringify(hotel)
     return this.http.post(this.uri+'hoteles/create/'+idAdmin,params, this.httpOptionsAuth)
       .pipe(map(this.extractData))
+  }
+
+  updateHotel(hotelSelected){
+    let params = JSON.stringify(hotelSelected);
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.getToken()
+    });
+    return this.http.put(this.uri+'hoteles/'+hotelSelected._id, params, {headers: headers})
+    .pipe(map(this.extractData))
   }
 }
