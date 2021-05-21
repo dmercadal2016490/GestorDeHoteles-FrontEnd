@@ -1,6 +1,6 @@
-<body>
-    <hr>
-    <!--<form (ngSubmit)="onSubmit()">-->
+
+    <!--<hr>
+    <form (ngSubmit)="onSubmit()">
     <form>
         <h1><em>Factura</em></h1>
         <h2 for="inputUserName">Total Pagar</h2>
@@ -17,4 +17,78 @@
     <h2 class="creditos">&copy;Grupo #2</h2>
     <hr>
     <hr>
+    -->
+<body>
+    <hr>
+    <div class="container">
+        <div class="row">
+          <div class="span4">
+            <address>
+                <strong class="titulo">HOTEL</strong><br>
+                   
+               Direccion<br>
+
+            </address>
+          </div>
+          <div class="span4 well">
+            <table class="invoice-head">
+              <tbody>
+                <tr>
+                  <td class="pull-right"><strong>Usuario</strong></td>
+                  <td>José Sebastian Pirir Romero</td>
+                </tr>
+                <hr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="span8">
+            <h2><em>Factura</em></h2>
+            <hr>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span8 well invoice-body">
+            <table class="table-bordered">
+            <thead>
+              <tr>
+                            <th>Habitación</th>
+            
+                            <th>Fecha</th>
+                <th>TOTAL</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>SEO Bronze</td>
+            
+              <td>8 Months</td>
+                        <td>1000</td>
+              </tr>
+              <tr><td colspan="3"></td></tr>
+  <tr>
+                <td colspan="1">&nbsp;</td>
+                <td><strong>Total</strong></td>
+                <td><strong>1000</strong></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="span8 well invoice-thank">
+            <button type="submit" class="btn btn-success col-lg-3 mx-2">Aceptar</button>  
+            <hr>
+            <h5 style="text-align:center;">Muchas gracias!</h5>
+            <hr>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <hr>
+      <h2 class="creditos">&copy;Grupo #2</h2>
+      <hr>
 </body>

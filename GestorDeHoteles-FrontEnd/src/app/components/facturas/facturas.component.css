@@ -1,4 +1,4 @@
-body{
+/*body{
     text-align: center;
     place-items: center;
     background-image: url("../../../assets/img/hotel2.jpg");
@@ -37,4 +37,68 @@ h2{
     color:aliceblue;
     -webkit-text-stroke:0.4px;
     -webkit-text-stroke-color: rgb(0, 0, 0);
+}*/
+body{
+    text-align: center;
+    place-items: center;
+    background-image: url("../../../assets/img/hotel2.jpg");
+    background-size: cover;
+    padding: 0;
+    margin:0;
+}
+
+.invoice-head td {
+    padding: 0 8px;
+    
+  }
+  .container {
+    padding-top:1em;
+    background-color: rgba(255, 255, 255, 0.849);
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
+
+  }
+  .invoice-body{
+    background-color:transparent;
+    
+    
+  }
+  .invoice-thank{
+    margin-top: 60px;
+    padding: 5px;
+    
+  }
+  address{
+    margin-top:15px;
+  }
+  
+.table-bordered{
+    border: 2px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+hr{
+    clear: both;
+    visibility: hidden;
+}
+
+.creditos{
+    margin-top: 1.3em;
+    color:aliceblue;
+    -webkit-text-stroke:0.5px;
+    -webkit-text-stroke-color: rgb(0, 0, 0);
+}
+
+.titulo{
+    font-size: 175%;
+}
+
+button{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    place-items: center;
 }
