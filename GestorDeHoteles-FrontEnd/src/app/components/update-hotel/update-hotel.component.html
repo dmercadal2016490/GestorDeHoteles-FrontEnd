@@ -1,7 +1,7 @@
 <body>
     <p>.</p>
     <div class="titulo">
-      <h1>{{hotel.name}}</h1>
+      <h1>Actualizar Hotel</h1>
     </div>
       <form (ngSubmit)="onSubmit()" id="formulario" class="editarHotel">
         <div id="formulario">
@@ -15,10 +15,8 @@
           </div>
         </div>
       </form>
-      <div class="d-grid gap-2 col-2 mx-auto botones">
+      <div class="d-grid gap-2">
         <button type="submit" class="btn btn-success" (click)="onSubmit()">Actualizar Hotel</button>
-        <button class="btn btn-danger">Eliminar Hotel</button>
-        <button class="btn btn-primary" routerLink="/habitacion">Agregar Habitaciones</button>
-        <button class="btn btn-secondary" routerLink="/eventos">Agregar Eventos</button>
+        <button class="btn btn-danger" routerLink="/hotel">Regresar</button>
       </div>
       <br>

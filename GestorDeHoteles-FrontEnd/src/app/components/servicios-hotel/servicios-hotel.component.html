@@ -1,20 +1,25 @@
 <body>
+    <br>
     <h1>Agregar un servicio</h1>
     <form (ngSubmit)="onSubmit(saveServicio)" #saveServicio="ngForm">
-        <div>
-            <label>Tipo de servicio:</label>
-            <input [(ngModel)]="servicio.tipoServicio" name="tipoServicio" type="text" required>
-        </div>
-        <div>
-            <label>Precio:</label>
-            <input [(ngModel)]="servicio.precio" name="precio" type="number" required>
-        </div>
-        <div>
-            <label>Descripción</label>
-            <input [(ngModel)]="servicio.descripcion" name="descripcion" type="text" required>
-        </div>
-        <div>
-            <input type="submit" value="Agregar" [disabled]="!saveServicio.form.valid">
+        <div class="divForm">
+            <div>
+                <label for="selectServicio">Selecciona el tipo de servicio:</label>
+                <select [(ngModel)]="servicio.tipoServicio" name="tipoServicio" id="selectServicio" class="form-select">
+                    <option *ngFor="let opcion of opcionesServicio" [value]="opcion">{{opcion}}</option>
+                </select>
+            </div>
+            <div>
+                <label>Precio:</label>
+                <input class="form-control" [(ngModel)]="servicio.precio" name="precio" type="number" required>
+            </div>
+            <div>
+                <label>Descripción</label>
+                <textarea class="form-control" [(ngModel)]="servicio.descripcion" name="descripcion" type="text" required></textarea>
+            </div>
+            <div class="d-grid gap-2 col-2 mx-auto boton">
+                <button type="submit" class="btn btn-success" [disabled]="!saveServicio.form.valid">Agregar Servicio</button>
+            </div>
         </div>
     </form>
 </body>

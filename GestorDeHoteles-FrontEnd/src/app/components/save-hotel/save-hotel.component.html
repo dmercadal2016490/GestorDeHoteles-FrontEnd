@@ -1,22 +1,30 @@
 <body>
-    <h1 class="texto1">Agregar Hotel</h1>
-    <form #saveHotel="ngForm" class="division" (ngSubmit)="onSubmit(saveHotel)">
-        <div>
-            <label>Nombre</label>
-            <input [(ngModel)]="hotel.name" name="name" type="text" id="inputName">
+    <p>.</p>
+    <div id="divH1">
+        <h1>Agregar Hotel</h1>
+    </div>
+    <form #saveHotel="ngForm" (ngSubmit)="onSubmit(saveHotel)">
+        <div class="addHotel">
+            <div>
+                <label>Nombre</label>
+                <input class="form-control" [(ngModel)]="hotel.name" name="name" type="text" id="inputName" required><br>
+            </div>
+            <div>
+                <label>Dirección</label>
+                <input class="form-control" [(ngModel)]="hotel.direccion" name="direccion" type="text" id="inputDirección" required><br>
+            </div>
+            <div>
+                <label>Escoja al administrador</label>
+                <select class="form-select" [(ngModel)]="idAdmin" name="admin" id="selectAdmin" required>
+                    <option selected>Abra el menú</option>
+                    <option *ngFor="let admin of adminsNombres">{{admin}}</option>
+                </select>
+            </div>
         </div>
-        <div>
-            <label>Dirección</label>
-            <input [(ngModel)]="hotel.direccion" name="direccion" type="text" id="inputDirección">
-        </div>
-        <div>
-            <label>Escoja al administrador</label>
-            <select [(ngModel)]="idAdmin" name="admin" id="selectAdmin">
-                <option *ngFor="let admin of adminsNombres">{{admin}}</option>
-            </select>
-        </div>
-        <div>
-            <button type="submit" [disabled]="!saveHotel.form.valid">Siguiente</button>
+        <br>
+        <br>
+        <div class="d-grid gap-2 col-2 mx-auto boton">
+            <button type="submit" class="btn btn-primary" [disabled]="!saveHotel.form.valid">Siguiente</button>
         </div>
     </form>
     <h2 class="texto3">&copy;Grupo #2</h2>

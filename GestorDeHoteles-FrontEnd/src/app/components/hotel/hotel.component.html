@@ -7,11 +7,11 @@
       <div id="formulario">
         <div class="mb-3">
           <label class="form-label" for="inputName">Nombre de Hotel:</label>
-          <input type="text" class="form-control" name="name" #name="ngModel" id="inputName" [(ngModel)]="hotel.name">
+          <input type="text" class="form-control" name="name" #name="ngModel" id="inputName" [(ngModel)]="hotel.name" disabled>
         </div>
         <div class="mb-3" for="inputDireccion">
           <label class="form-label">Dirección:</label>
-          <input type="text" class="form-control" name="direccion" #direccion="ngModel" id="inputDireccion" [(ngModel)]="hotel.direccion">
+          <input type="text" class="form-control" name="direccion" #direccion="ngModel" id="inputDireccion" [(ngModel)]="hotel.direccion" disabled>
         </div>
         <div class="mb-3">
           <label class="form-label">Cantidad de Solicitudes:</label>
@@ -26,29 +26,4 @@
       <button class="btn btn-secondary" routerLink="/eventos">Agregar Eventos</button>
     </div>
     <br>
-
-    <!--Modal actualizar-->
-    <div class="modal fade" id="updateHotel" tabindex="-1" aria-labelledby="updateHotelLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="updateHotelLabel">Actualiza tu hotel</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" style="text-align: center;">
-            <div>
-              <label for="inputName">Nombre de Hotel:</label><br>
-              <input type="text" [(ngModel)]="hotel.name" name="name" #name="ngModel" id="inputName">
-            </div>            <div>
-              <label for="inputDireccion">Dirección:</label><br>
-              <input type="text" [(ngModel)]="hotel.direccion" name="direccion" #direccion="ngModel" id="inputDireccion">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="onSubmit()">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
 </body>

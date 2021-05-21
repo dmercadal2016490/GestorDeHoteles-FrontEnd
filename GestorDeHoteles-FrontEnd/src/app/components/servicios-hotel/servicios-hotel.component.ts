@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ServiciosHotelComponent implements OnInit {
 
+  public opcionesServicio = ['VIP', 'Normal', 'Suite'];
   servicio: Servicio;
   public token;
   public service:[];
@@ -21,10 +22,11 @@ export class ServiciosHotelComponent implements OnInit {
   constructor(private restServicio: RestServicioService, 
               private restHabitacion: RestHabitacionService, 
               private route: Router) { 
-                this.servicio = new Servicio ('','','')
+
               }
 
   ngOnInit(): void {
+    this.servicio = new Servicio ('','','')
     this.token = this.restServicio.getToken();
     this.room = JSON.parse(localStorage.getItem('habitacion'))
   }
@@ -36,6 +38,7 @@ export class ServiciosHotelComponent implements OnInit {
         form.reset();
         this.service = res;
         localStorage.setItem('servicio', JSON.stringify(this.service))
+        this.route.navigateByUrl('home')
       }else{
         alert('No se creó la habitación')
       }
