@@ -1,22 +1,30 @@
 <body>
-    <h1>Agregar un evento</h1>
+    <br>
     <form #saveEvento="ngForm" (ngSubmit)="onSubmit(saveEvento)">
         <div>
-            <label>Tipo de Evento:</label>
-            <input [(ngModel)]="evento.tipoEvento" name="tipoEvento" type="text">
+            <h1>Agregar un evento</h1>
         </div>
         <div>
-            <label>Fecha:</label>
-            <input [(ngModel)]="evento.fecha" name="fecha" type="date">
+            <div class="form-floating mb-3">
+                <input class="form-control" [(ngModel)]="evento.tipoEvento" name="tipoEvento" type="text" placeholder="Tipo de Evento" id="inputTipo"> 
+                <label for="inputTipo">Tipo de Evento</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" [(ngModel)]="evento.fecha" name="fecha" type="date" id="inputFecha" placeholder="Fecha de Evento">
+                <label for="inputFecha">Fecha</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="time" [(ngModel)]="evento.horario" name="horario" id="inputHora" placeholder="Hora de Evento">
+                <label for="inputHora">Horario</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input class="form-control" type="text" [(ngModel)]="evento.descripcion" name="descripcion" id="inputDescripcion" placeholder="Descripción">
+                <label for="">Descripción</label>
+            </div>
+            <div class="d-grid gap-2 col-2 mx-auto">
+                <button class="btn btn-primary" type="submit">Agregar</button>
+            </div>
         </div>
-        <div>
-            <label>Horario:</label>
-            <input type="time" [(ngModel)]="evento.horario" name="horario">
-        </div>
-        <div>
-            <label>Descripción</label>
-            <input type="text" [(ngModel)]="evento.descripcion" name="descripcion">
-        </div>
-        <input type="submit">
     </form>
+    <h2 class="texto3">&copy; Grupo #2</h2>
 </body>

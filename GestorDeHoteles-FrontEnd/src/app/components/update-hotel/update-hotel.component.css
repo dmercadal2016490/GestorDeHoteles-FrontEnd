@@ -31,3 +31,11 @@ h1{
     margin-top: 80px;
     padding: 30px;
 }
+
+.texto3{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    font-family: sans-serif;
+    margin-top: 100px;
+}
