@@ -1,0 +1,33 @@
+body{
+    height: 100%;
+    background-image: url('../../../assets/img/hotel2.jpg');
+    background-size: cover;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+form{
+    background-color: rgba(15, 207, 255, 0.377);
+    width: 70%;
+    margin-top: 80px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 40px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+#botones{
+    margin-top: 70px;
+}
+
+h1{
+    background-color: rgb(231, 231, 231);
+    text-align: center;
+    letter-spacing: 9px;
+    font-weight: bold;
+    margin-top: 80px;
+    padding: 30px;
+}
