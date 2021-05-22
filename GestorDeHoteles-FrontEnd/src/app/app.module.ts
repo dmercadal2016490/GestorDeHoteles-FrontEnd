@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 //Componentes
 
@@ -32,6 +33,7 @@ import { ReservacionComponent } from './components/reservacion/reservacion.compo
 import { UpdateHotelComponent } from './components/update-hotel/update-hotel.component';
 import { HabitacionesComponent } from './components/habitaciones/habitaciones.component';
 import { ListEventosComponent } from './components/list-eventos/list-eventos.component';
+import { GraficaComponent } from './components/grafica/grafica.component';
 
 @NgModule({
   declarations: [
@@ -58,13 +60,15 @@ import { ListEventosComponent } from './components/list-eventos/list-eventos.com
     UpdateHotelComponent,
     HabitacionesComponent,
     ListEventosComponent,
+    GraficaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [RestUserService],
   bootstrap: [AppComponent]
