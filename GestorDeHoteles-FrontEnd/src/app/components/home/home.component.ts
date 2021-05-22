@@ -38,5 +38,4 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('hotelSelected', JSON.stringify(hotel))
     this.hotelSelected = hotel
   }
-
 }

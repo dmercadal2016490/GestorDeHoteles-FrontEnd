@@ -10,7 +10,7 @@
     <h5 class="card-title">{{hotel.name}}</h5><hr>
     <h6 class="card-subtitle">{{hotel.direccion}}</h6><hr>
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="obtenerData(hotel)">Ver Hotel</button>
-    <button  class="btn btn-success"  routerLink="/hotel" (click)="obtenerData(hotel)">Administrar</button>
+    <button  class="btn btn-success" *ngIf="user._id == hotels.admin"  routerLink="/hotel" (click)="obtenerData(hotel)">Administrar</button>
   </div>
 </div><br>
 <footer>

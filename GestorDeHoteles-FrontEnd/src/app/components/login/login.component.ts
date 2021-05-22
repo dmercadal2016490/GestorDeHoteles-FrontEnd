@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 import { RestUserService } from '../../services/restUser/rest-user.service';
+import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
 import { Router } from '@angular/router';
+import { Hotel } from '../../models/hotel';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +14,16 @@ export class LoginComponent implements OnInit {
   user:User;
   token:string;
   usserLogged;
+  hotels: Hotel;
+  hotel:[];
 
-  constructor(private restUser:RestUserService, private router:Router) {
+  constructor(private restUser:RestUserService, private restHotels: RestHotelService,private router:Router) {
     this.user = new User('','','','','','',[],[]);
    }
 
   ngOnInit(): void {
+    this.listHotels();
+    this.hotels = new Hotel('','','',null,null,null,null,null,null);
   }
 
   onSubmit(){
@@ -40,6 +46,23 @@ export class LoginComponent implements OnInit {
     },
     (error:any) => alert('No se pudo logear')
     )
+  }
+
+  listHotels(){
+    this.restHotels.getHotel().subscribe((res:any)=>{
+      if(res){
+        this.hotel = res;
+        //alert('Hoteles encontrados');
+      }else{
+        alert('No hoteles');
+      }
+    },
+    error => alert(error.error))
+  }
+
+  obtenerData(hotel){
+    localStorage.setItem('hotels', JSON.stringify(hotel))
+    this.hotels = hotel
   }
 
 }
