@@ -13,7 +13,7 @@ export class HotelComponent implements OnInit {
   public hotel;
   hotelUpdate;
 
-  constructor(private restHotels:RestHotelService) {
+  constructor(private restHotels:RestHotelService, private router: Router) {
     this.hotel = new Hotel('','','',null,null,null,null,null,null);
 
   }
@@ -31,5 +31,19 @@ export class HotelComponent implements OnInit {
         alert('Usuario actualizado en base de datos');
       }
     },error => alert('Hotel no actualizado ' + error.error))
+  }
+
+  deleteHotel(){
+    this.restHotels.deleteHotel(this.hotel._id).subscribe((res:any)=>{
+      if(res.hotelBorrado){
+        alert('Hotel eliminado');
+        this.router.navigateByUrl('home');
+        localStorage.removeItem('hotelSelected');
+      }else{
+        alert('Hotel eliminado');
+        this.router.navigateByUrl('home');
+        localStorage.removeItem('hotelSelected');
+      }
+    },error => alert('Hotel no eliminado ' + error.error))
   }
 }

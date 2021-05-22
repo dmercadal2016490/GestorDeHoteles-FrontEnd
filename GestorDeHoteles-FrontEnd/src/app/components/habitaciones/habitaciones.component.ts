@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Habitacion } from 'src/app/models/habitacion';
 import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
 export class HabitacionesComponent implements OnInit {
   hotel;
   rooms:[];
+  roomSelected: Habitacion;
 
   constructor(private restHotel:RestHotelService) { }
 
@@ -16,6 +18,11 @@ export class HabitacionesComponent implements OnInit {
     this.hotel = this.restHotel.getHotelSelected();
     this.rooms = this.hotel.room;
     console.log(this.rooms);
+  }
+
+  obtenerData(room){
+    localStorage.setItem('roomSelected', JSON.stringify(room))
+    this.roomSelected = room;
   }
 
 }

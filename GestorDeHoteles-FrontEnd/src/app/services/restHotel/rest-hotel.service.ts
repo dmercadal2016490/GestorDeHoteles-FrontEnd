@@ -83,4 +83,13 @@ export class RestHotelService {
     }
     return this.hotel;
   }
+
+  deleteHotel(idHotel){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.getToken()
+    });
+    return this.http.delete(this.uri+'hoteles/'+idHotel, {headers: headers})
+    .pipe(map(this.extractData))
+  }
 }

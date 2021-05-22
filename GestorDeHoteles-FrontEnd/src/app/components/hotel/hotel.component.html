@@ -21,9 +21,28 @@
     </form>
     <div class="d-grid gap-2 col-2 mx-auto botones">
       <button class="btn btn-success" routerLink="/updateHotel">Actualizar Hotel</button>
-      <button class="btn btn-danger">Eliminar Hotel</button>
+      <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Eliminar Hotel</button>
       <button class="btn btn-primary" routerLink="/habitacion">Agregar Habitaciones</button>
       <button class="btn btn-secondary" routerLink="/eventos">Agregar Eventos</button>
     </div>
     <h2 class="texto3">&copy; Grupo #2</h2>
 </body>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Eliminar cuenta</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3>¿Estas seguro que quieres eliminar tu cuenta?</h3>
+        <p>Esta acción es definitiva</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button data-bs-dismiss="modal" type="button" class="btn btn-danger" (click)="deleteHotel()">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
