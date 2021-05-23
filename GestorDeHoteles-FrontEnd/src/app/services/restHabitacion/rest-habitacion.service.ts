@@ -26,6 +26,7 @@ export class RestHabitacionService {
 
   public token;
   public hotel;
+  public habitacion;
 
   getToken(){
     let token = localStorage.getItem('token');
@@ -45,7 +46,7 @@ export class RestHabitacionService {
   constructor(private http : HttpClient, private restHotel: RestHotelService) {
     this.uri = CONNECTION.URI
   }
-
+  
   saveHabitacion(idHotel, habitacion){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',

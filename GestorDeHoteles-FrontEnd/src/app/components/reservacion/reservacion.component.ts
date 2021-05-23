@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Reservacion } from '../../models/reservacion';
-import { Hotel } from '../../models/hotel';
-import { RestReservacionService } from '../../services/restReservacion/rest-reservacion.service';
-import { Router, RouterModule } from '@angular/router';
-import { RestHotelService } from 'src/app/services/restHotel/rest-hotel.service';
+import { Router } from '@angular/router';
+import { Hotel } from 'src/app/models/hotel';
 import { RestHabitacionService } from 'src/app/services/restHabitacion/rest-habitacion.service';
-import { Habitacion } from 'src/app/models/habitacion';
-
+import { RestHotelService } from 'src/app/services/restHotel/rest-hotel.service';
+import { RestReservacionService } from 'src/app/services/restReservacion/rest-reservacion.service';
+import { Reservacion } from '../../models/reservacion';
 
 @Component({
   selector: 'app-reservacion',
@@ -14,39 +12,42 @@ import { Habitacion } from 'src/app/models/habitacion';
   styleUrls: ['./reservacion.component.css']
 })
 export class ReservacionComponent implements OnInit {
-  reservacion:Reservacion;
-  hotelSelected:Hotel;
-  habitacionSelected:Habitacion;
-  hotel;
-  habitacion;
+  reservacion: Reservacion;
   public token;
-  public factura = [];
+  public reservation:[];
+  public room;
+  public hotel;
+  hotelSelected: Hotel;
+  hotelId;
+  idHotel;
+  roomId;
+  idRoom;
 
-  constructor(private restHotel: RestHotelService, private restHabitacion: RestHabitacionService, private restReservacion: RestReservacionService, private route: Router) {
-    this.reservacion = new Reservacion(null,null,null,null,[]);
-    this.habitacionSelected = new Habitacion('disponible','',[]);
-    this.hotelSelected = new Hotel('','','',null,null,null,null,null,null);
-   }
+  constructor(private restReservacion: RestReservacionService,
+              private restHabitacion: RestHabitacionService,
+              private restHotel: RestHotelService,
+              private route: Router) { 
+
+              }
 
   ngOnInit(): void {
+    this.reservacion = new Reservacion (null, null, null, null, [])
     this.token = this.restReservacion.getToken();
     this.hotel = JSON.parse(localStorage.getItem('hotelSelected'));
-    /*this.habitacion = (JSON.parse(localStorage.getItem('hotelSelected')));*/
-    this.habitacion = localStorage.getItem(JSON.parse('habitacionselected'))
+    this.room = JSON.parse(localStorage.getItem('roomSelected'))
   }
 
   onSubmit(form){
-    this.restReservacion.saveReservacion(this.hotel._id, this.hotel.room, this.reservacion).subscribe((res:any)=>{
+    this.restReservacion.saveReservacion(this.room._id , this.hotel._id , this.reservacion).subscribe((res: any)=>{
       if(res){
-        alert('Reservacion realizada')
-        form.reset()
-        this.reservacion = res;
-        localStorage.setItem('reservacion', JSON.stringify(this.reservacion))
-        this.route.navigateByUrl('servicios')
+        alert('Reservacion creada')
+        form.reset();
+        this.reservation = res;
+        localStorage.setItem('reservation', JSON.stringify(this.reservation))
+        this.route.navigateByUrl('home')
       }else{
-        alert('La reservacion no se creo')
+        alert('No se creo la reservacion')
       }
-    },error => console.log(<any>error))
+    }, error => console.log(<any>error))
   }
-
 }
