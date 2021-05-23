@@ -29,7 +29,7 @@ export class SaveUserComponent implements OnInit {
         alert('Usuario creado exitosamente');
         this.router.navigateByUrl('login');
       }
-      error => console.log(<any>error);
+      error => alert('No se pudo guardar el usuario');
     })
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Habitacion } from 'src/app/models/habitacion';
 import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
+import { RestUserService } from '../../services/restUser/rest-user.service';
 
 @Component({
   selector: 'app-habitaciones',
@@ -11,12 +12,14 @@ export class HabitacionesComponent implements OnInit {
   hotel;
   rooms:[];
   roomSelected: Habitacion;
+  user;
 
-  constructor(private restHotel:RestHotelService) { }
+  constructor(private restHotel:RestHotelService, private restUser:RestUserService) { }
 
   ngOnInit(): void {
     this.hotel = this.restHotel.getHotelSelected();
     this.rooms = this.hotel.room;
+    this.user = this.restUser.getUser();
   }
 
   obtenerData(room){

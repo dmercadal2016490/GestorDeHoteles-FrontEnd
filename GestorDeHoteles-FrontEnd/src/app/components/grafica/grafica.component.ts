@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestHotelService } from '../../services/restHotel/rest-hotel.service';
 import { ChartType } from 'chart.js';
 import { MultiDataSet, Label } from 'ng2-charts';
 
@@ -8,17 +9,31 @@ import { MultiDataSet, Label } from 'ng2-charts';
   styleUrls: ['./grafica.component.css']
 })
 export class GraficaComponent implements OnInit {
-  public doughnutChartLabels: Label[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData: MultiDataSet = [
-    [350, 450, 100],
-    [50, 150, 120],
-    [250, 130, 70],
+  name;
+  hotels:[];
+  
+  public doughnutChartLabels: Label[] = ['pepino', 'aguacate','pizza'];
+  public doughnutChartData: MultiDataSet = [[350, 450, 100],
   ];
   public doughnutChartType: ChartType = 'doughnut';
 
-  constructor() { }
+  constructor(private restHotels:RestHotelService) {
+  }
 
   ngOnInit(): void {
+    this.listHotels();
+  }
+
+  listHotels(){
+    this.restHotels.getHotel().subscribe((res:any)=>{
+      if(res){
+        this.hotels = res;
+        //alert('Hoteles encontrados');
+      }else{
+        alert('No hoteles');
+      }
+    },
+    error => alert(error.error))
   }
 
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
@@ -28,5 +43,6 @@ export class GraficaComponent implements OnInit {
   public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
   }
+
 
 }
