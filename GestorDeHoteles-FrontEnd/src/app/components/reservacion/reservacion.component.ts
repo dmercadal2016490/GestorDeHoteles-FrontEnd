@@ -38,7 +38,7 @@ export class ReservacionComponent implements OnInit {
   }
 
   onSubmit(form){
-    this.restReservacion.saveReservacion(this.room._id , this.hotel._id , this.reservacion).subscribe((res: any)=>{
+    this.restReservacion.saveReservacion(this.hotel._id ,this.room._id , this.reservacion).subscribe((res: any)=>{
       if(res){
         alert('Reservacion creada')
         form.reset();
