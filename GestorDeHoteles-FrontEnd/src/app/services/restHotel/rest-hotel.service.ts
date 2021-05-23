@@ -47,6 +47,16 @@ export class RestHotelService {
       .pipe(map(this.extractData))
   }
 
+  getHotels(){
+    let hotel = JSON.parse(localStorage.getItem('hotel'));
+    if(hotel != undefined || hotel != null){
+      this.hotel = hotel
+    }else{
+      this.hotel = null;
+    }
+    return this.hotel;
+  }
+
   getHotelData(){
     let hotel = JSON.parse(localStorage.getItem('hotelSelected'));
     if(hotel != undefined || hotel != null){

@@ -17,7 +17,6 @@ export class HabitacionesComponent implements OnInit {
   ngOnInit(): void {
     this.hotel = this.restHotel.getHotelSelected();
     this.rooms = this.hotel.room;
-    console.log(this.rooms);
   }
 
   obtenerData(room){

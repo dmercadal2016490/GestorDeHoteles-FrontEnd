@@ -24,9 +24,7 @@
         <div class="row">
           <div class="span4">
             <address>
-                <strong class="titulo">HOTEL</strong><br>
-                   
-               Direccion<br>
+                <strong class="titulo"></strong><br>
 
             </address>
           </div>
@@ -35,7 +33,7 @@
               <tbody>
                 <tr>
                   <td class="pull-right"><strong>Usuario</strong></td>
-                  <td>José Sebastian Pirir Romero</td>
+                  <td>{{user.username}}</td>
                 </tr>
                 <hr>
                 
@@ -43,7 +41,7 @@
             </table>
           </div>
         </div>
-
+        <form (ngSubmit)="onSubmit(saveFactura)" #saveFactura="ngForm">
         <div class="row">
           <div class="span8">
             <h2><em>Factura</em></h2>
@@ -57,22 +55,19 @@
               <tr>
                             <th>Habitación</th>
             
-                            <th>Fecha</th>
                 <th>TOTAL</th>
               </tr>
             </thead>
             <tbody>
             <tr>
               <td>SEO Bronze</td>
-            
-              <td>8 Months</td>
-                        <td>1000</td>
+                        <td><input class="form-control" [(ngModel)]="facturas.totalPagar" name="totalPagar"   id="totalPagar" type="number" placeholder="Price"></td>
               </tr>
-              <tr><td colspan="3"></td></tr>
+              <tr><td colspan="1"></td></tr>
   <tr>
-                <td colspan="1">&nbsp;</td>
+        <!--        <td colspan="1">&nbsp;</td>
                 <td><strong>Total</strong></td>
-                <td><strong>1000</strong></td>
+                <td><strong>1000</strong></td>-->
               </tr>
             </tbody>
           </table>
@@ -82,13 +77,14 @@
           <div class="span8 well invoice-thank">
             <button type="submit" class="btn btn-success col-lg-3 mx-2">Aceptar</button>  
             <hr>
+
             <h5 style="text-align:center;">Muchas gracias!</h5>
             <hr>
           </div>
         </div>
-      </div>
+      </form>
       <hr>
       <hr>
       <h2 class="creditos">&copy;Grupo #2</h2>
       <hr>
-</body>
+

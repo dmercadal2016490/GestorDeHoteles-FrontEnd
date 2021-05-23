@@ -34,6 +34,7 @@ import { UpdateHotelComponent } from './components/update-hotel/update-hotel.com
 import { HabitacionesComponent } from './components/habitaciones/habitaciones.component';
 import { ListEventosComponent } from './components/list-eventos/list-eventos.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
+import { ReservacionesComponent } from './components/reservaciones/reservaciones.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { GraficaComponent } from './components/grafica/grafica.component';
     HabitacionesComponent,
     ListEventosComponent,
     GraficaComponent,
+    ReservacionesComponent,
   ],
   imports: [
     BrowserModule,

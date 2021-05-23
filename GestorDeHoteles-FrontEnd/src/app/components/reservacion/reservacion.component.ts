@@ -4,6 +4,7 @@ import { Hotel } from 'src/app/models/hotel';
 import { RestHabitacionService } from 'src/app/services/restHabitacion/rest-habitacion.service';
 import { RestHotelService } from 'src/app/services/restHotel/rest-hotel.service';
 import { RestReservacionService } from 'src/app/services/restReservacion/rest-reservacion.service';
+import { RestServicioService } from 'src/app/services/restServicio/rest-servicio.service';
 import { Reservacion } from '../../models/reservacion';
 
 @Component({
@@ -22,9 +23,11 @@ export class ReservacionComponent implements OnInit {
   idHotel;
   roomId;
   idRoom;
+  //servicio;
 
   constructor(private restReservacion: RestReservacionService,
               private restHabitacion: RestHabitacionService,
+              //private restServicio: RestServicioService,
               private restHotel: RestHotelService,
               private route: Router) { 
 
@@ -34,8 +37,13 @@ export class ReservacionComponent implements OnInit {
     this.reservacion = new Reservacion (null, null, null, null, [])
     this.token = this.restReservacion.getToken();
     this.hotel = JSON.parse(localStorage.getItem('hotelSelected'));
-    this.room = JSON.parse(localStorage.getItem('roomSelected'))
+    this.room = JSON.parse(localStorage.getItem('roomSelected'));
+    //this.servicio = JSON.parse(localStorage.getItem('servicio'));
   }
+
+  /*ngDoCheck(){
+    this.servicio = this.restServicio.getServicio();
+  }*/
 
   onSubmit(form){
     this.restReservacion.saveReservacion(this.hotel._id ,this.room._id , this.reservacion).subscribe((res: any)=>{
@@ -44,7 +52,7 @@ export class ReservacionComponent implements OnInit {
         form.reset();
         this.reservation = res;
         localStorage.setItem('reservation', JSON.stringify(this.reservation))
-        this.route.navigateByUrl('home')
+        this.route.navigateByUrl('facturas')
       }else{
         alert('No se creo la reservacion')
       }

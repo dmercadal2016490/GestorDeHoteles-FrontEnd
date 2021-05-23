@@ -13,12 +13,14 @@
             <input class="form-control" [(ngModel)]="reservacion.numeroTarjeta" name="numeroTarjeta"   id="numeroTarjeta" type="number" placeholder="Your credit card">
         <hr>
         <h2 for="inputTotalPagar">Total a Pagar</h2>
-            <input class="form-control" [(ngModel)]="reservacion.totalPagar" name="totalPagar"   id="totalPagar" type="number" placeholder="Price">
+        
+        <input class="form-control" [(ngModel)]="reservacion.totalPagar" name="totalPagar"   id="totalPagar" type="number" placeholder="Price">
+
         <hr>
     <!--    <h2 for="inputRoom">Habitación</h2>
             <input [(ngModel)]="reservacion.room" name="room" #name="ngModel" class="form-control" id="inputRoom" type="text" placeholder="Room">
         <hr>-->
-        <button type="submit" class="btn btn-success col-lg-3 mx-2" [disabled]="!saveReservacion.form.valid" value="Guardar Reservacion">Aceptar</button>
+        <button type="submit" class="btn btn-success col-lg-3 mx-2" [disabled]="!saveReservacion.form.valid" value="Guardar Reservacion" >Aceptar</button>
         <hr>
     </form>
     <hr>
