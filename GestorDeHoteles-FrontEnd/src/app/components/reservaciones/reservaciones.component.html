@@ -6,11 +6,11 @@
         <div class="card myWidth text-white bg-secondary" *ngFor="let bills of reservaciones ; let i = index">
             <img src="../../../assets/img/room.png" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-title">{{bills.room}}</p><hr>
+              <p class="card-title">ID de la reservacion: {{bills._id}}</p><hr>
               <p class="card-subtitle">Precio: {{bills.totalPagar}}</p>
             </div>
             <div>
-                <button class="btn btn-success" (click)="obtenerData(reservacion)" routerLink="/cancelarReservacioin">Reservar</button>
+                <button class="btn btn-danger" (click)="obtenerData(reservacion)" routerLink="/eliminarReservacion">Eliminar Reservacion</button>
             </div>
         </div>
     </div>

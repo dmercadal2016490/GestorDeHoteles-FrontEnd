@@ -20,8 +20,8 @@ export class ReservacionesComponent implements OnInit {
     this.reservaciones = this.user.bills;
   }
 
-  obtenerData(bills){
-    localStorage.setItem('reservation',JSON.stringify(bills))
-    this.reservationSelected = bills;
+  obtenerData(bill){
+    localStorage.setItem('reservacionSelected',JSON.stringify(bill))
+    this.reservationSelected = bill;
   }
 }
