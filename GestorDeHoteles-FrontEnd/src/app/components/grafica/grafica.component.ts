@@ -10,31 +10,35 @@ import { MultiDataSet, Label } from 'ng2-charts';
 })
 export class GraficaComponent implements OnInit {
   name;
-  hotels:[];
+  hotels;
+  solicitud;
   
-  public doughnutChartLabels: Label[] = ['pepino', 'aguacate','pizza'];
-  public doughnutChartData: MultiDataSet = [[350, 450, 100],
+  
+  public doughnutChartLabels: Label[] = ['Reservaciones'];
+  public doughnutChartData: MultiDataSet = [[this.hotelSoliciud()],
   ];
   public doughnutChartType: ChartType = 'doughnut';
 
   constructor(private restHotels:RestHotelService) {
+    this.hotels = this.restHotels.getHotelSelected()
+    if(this.hotelSoliciud()==0){
+      alert('No hay reservaciones')
+    }
   }
 
   ngOnInit(): void {
-    this.listHotels();
+    this.hotels = this.restHotels.getHotelSelected()
   }
 
-  listHotels(){
-    this.restHotels.getHotel().subscribe((res:any)=>{
-      if(res){
-        this.hotels = res;
-        //alert('Hoteles encontrados');
-      }else{
-        alert('No hoteles');
-      }
-    },
-    error => alert(error.error))
+  hotelNombre(){
+    return this.hotels = this.restHotels.getHotelSelected().name
   }
+
+  hotelSoliciud(){
+    return this.solicitud = this.restHotels.getHotelSelected().solicitud
+  }
+
+  
 
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
     console.log(event, active);
