@@ -1,5 +1,6 @@
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { pipe } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { CONNECTION } from '../global';
 
@@ -9,7 +10,7 @@ import { CONNECTION } from '../global';
 export class RestReservacionService {
 
   public token;
-
+  public reservacion;
   public uri:string;
   public httpOptions ={
     headers: new HttpHeaders({
@@ -57,4 +58,24 @@ getReservacion(){
   return this.http.get(this.uri + 'reservacion/')
     .pipe(map(this.extractData))
 }
+
+getReserva(){
+  let reservacion = JSON.parse(localStorage.getItem('reservacionSelected'));
+    if(reservacion != undefined || reservacion != null){
+      this.reservacion = reservacion
+    }else{
+      this.reservacion = null;
+    }
+    return this.reservacion;
+}
+
+deleteReservacion(idReservacion, idRoom){
+  let headers = new HttpHeaders({
+    'Content-type': 'application/json',
+    'Authorization': 'Bearer '+this.getToken()
+  });
+  return this.http.delete(this.uri+'reservaciones/'+idReservacion+'/'+idRoom, {headers:headers})
+  .pipe(map(this.extractData))
+}
+
 }

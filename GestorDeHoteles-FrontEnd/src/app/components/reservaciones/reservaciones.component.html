@@ -3,16 +3,29 @@
         <p class="card-title"> <em>{{user.name}}</em> <b> Reservaciones</b></p>
     </div>    
     <div id="cards">
-        <div class="card myWidth text-white bg-secondary" *ngFor="let bills of reservaciones ; let i = index">
+        <div class="card myWidth text-white bg-secondary" *ngFor="let history of reservaciones ; let i = index">
             <img src="../../../assets/img/room.png" class="card-img-top" alt="...">
             <div class="card-body">
-              <p class="card-title">ID de la reservacion: {{bills._id}}</p><hr>
-              <p class="card-subtitle">Precio: {{bills.totalPagar}}</p>
+              <p class="card-title">ID de la reservacion: {{history.room}}</p><hr>
+              <p class="card-subtitle">Precio: {{history.totalPagar}}</p>
             </div>
             <div>
-                <button class="btn btn-danger" (click)="obtenerData(reservacion)" routerLink="/eliminarReservacion">Eliminar Reservacion</button>
+                <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="obtenerData(history)" >Opciones</button>
             </div>
         </div>
     </div>
     <h2 class="texto3">&copy;Grupo #2</h2>
     </body>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Más opciones</h5>
+                <hr>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button data-bs-dismiss="modal" *ngIf="user.rol == 'ROL_CLIENT' || user.rol == 'ROL_ADMINHOTEL'" type="button" class="btn btn-danger" (click)="deleteReservacion()">Cancelar reservacion</button>
+              </div>
+            </div>
+        </div>
+    </div>
