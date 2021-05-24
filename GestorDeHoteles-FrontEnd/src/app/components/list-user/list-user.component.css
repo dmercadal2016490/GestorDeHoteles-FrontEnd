@@ -28,3 +28,12 @@ input{
   font-size: 30px;
   font-family: sans-serif;
 }
+
+.division1{
+  background-color: white;
+  text-align: center;
+  font-size: 70px;
+  border-radius: 150px;
+  font-family:'Lucida Sans';
+  margin-top: 20px;
+}
