@@ -49,9 +49,9 @@ const routes: Routes = [
   {path: 'listUsers', canActivate: [AdminGuard], component:ListUserComponent},
   {path: 'updateHotel', canActivate: [AdminHotelGuard], component: UpdateHotelComponent},
   {path:'habitaciones', canActivate:[LoggedGuard], component:HabitacionesComponent},
-  {path: 'reservaciones', component:ReservacionesComponent},
-  {path:'listEventos', component:ListEventosComponent},
-  {path:'graficas', component:GraficaComponent},
+  {path: 'reservaciones',canActivate:[LoggedGuard], component:ReservacionesComponent},
+  {path:'listEventos', canActivate:[LoggedGuard],component:ListEventosComponent},
+  {path:'graficas', canActivate: [AdminGuard],component:GraficaComponent},
   {path: '**', component:NotFoundComponent}
 ];
 

@@ -52,6 +52,7 @@
           <button data-bs-dismiss="modal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button data-bs-dismiss="modal" *ngIf="user.rol == 'ROL_CLIENT' || user.rol == 'ROL_ADMINHOTEL'" type="button" class="btn btn-primary" routerLink="/habitaciones">Habitaciones</button>
           <button data-bs-dismiss="modal" *ngIf="user.rol == 'ROL_CLIENT' || user.rol == 'ROL_ADMINHOTEL'" type="button" class="btn btn-primary" routerLink="/listEventos">Eventos</button>
+          <button data-bs-dismiss="modal" *ngIf="user.rol == 'ROL_ADMINAPP'" type="button" class="btn btn-primary" routerLink="/graficas">Estdistica</button>
         </div>
       </div>
     </div>
