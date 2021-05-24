@@ -45,13 +45,13 @@ export class RestServicioService {
     this.uri = CONNECTION.URI
   }
 
-  saveServicio(idRoom, servicio){
+  saveServicio(idHabitacion, servicio){
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.getToken()
     });
     let params= JSON.stringify(servicio);
-    return this.http.post(this.uri+'servicios/'+idRoom+'/create', params, {headers:headers})
+    return this.http.post(this.uri+'servicios/'+idHabitacion+'/create', params, {headers:headers})
     .pipe(map(this.extractData))
   }
 }
