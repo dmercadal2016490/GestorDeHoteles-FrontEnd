@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   hotelSelected:Hotel;
   user;
   search;
+  public hotel;
+  hotelAdmin;
 
   constructor(private restHotels:RestHotelService, private restUser:RestUserService) { }
 
@@ -26,7 +28,6 @@ export class HomeComponent implements OnInit {
     this.restHotels.getHotel().subscribe((res:any)=>{
       if(res){
         this.hotels = res;
-        //alert('Hoteles encontrados');
       }else{
         alert('No hoteles');
       }
@@ -37,5 +38,9 @@ export class HomeComponent implements OnInit {
   obtenerData(hotel){
     localStorage.setItem('hotelSelected', JSON.stringify(hotel))
     this.hotelSelected = hotel
+  }
+
+  eliminarData(){
+    localStorage.removeItem('hotelSelected')
   }
 }

@@ -9,10 +9,10 @@ import { RestUserService } from '../../services/restUser/rest-user.service';
   styleUrls: ['./habitaciones.component.css'],
 })
 export class HabitacionesComponent implements OnInit {
+  user;
   hotel;
   rooms:[];
   roomSelected: Habitacion;
-  user;
 
   constructor(private restHotel:RestHotelService, private restUser:RestUserService) { }
 
@@ -26,5 +26,4 @@ export class HabitacionesComponent implements OnInit {
     localStorage.setItem('roomSelected', JSON.stringify(room))
     this.roomSelected = room;
   }
-
 }

@@ -25,7 +25,6 @@ export class EventosComponent implements OnInit {
 
   ngOnInit(): void {
     this.token = this.restHotel.getToken();
-    this.token = this.restHotel.getToken();
     this.hotel = JSON.parse(localStorage.getItem('hotelSelected'))
   }
     

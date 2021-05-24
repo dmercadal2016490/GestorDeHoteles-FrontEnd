@@ -10,7 +10,7 @@
           <p class="card-subtitle">Estado: {{room.disponibilidad}}</p>
         </div>
         <div>
-            <button *ngIf="user.rol == 'ROL_CLIENT'" class="btn btn-success" (click)="obtenerData(room)" routerLink="/reservacion">Reservar</button>
+            <button *ngIf="user.rol == 'ROL_CLIENT' && room.disponibilidad == 'disponible'" class="btn btn-success" (click)="obtenerData(room)" routerLink="/reservacion">Reservar</button>
         </div>
     </div>
 </div>

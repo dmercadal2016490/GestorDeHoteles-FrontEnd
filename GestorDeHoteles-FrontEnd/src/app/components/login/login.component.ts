@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   token:string;
   usserLogged;
   hotels: Hotel;
-  hotel:[];
+  hotel;
 
   constructor(private restUser:RestUserService, private restHotels: RestHotelService,private router:Router) {
     this.user = new User('','','','','','',[],[]);
