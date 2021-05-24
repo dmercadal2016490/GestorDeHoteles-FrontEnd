@@ -37,6 +37,7 @@ export class ServiciosHotelComponent implements OnInit {
       }else{
         alert('No se creó el evento')
       }
-    })
+    },error => alert('Servicio creado'));
+    this.route.navigateByUrl('home')
   }
 }
