@@ -46,6 +46,16 @@ export class RestHabitacionService {
   constructor(private http : HttpClient, private restHotel: RestHotelService) {
     this.uri = CONNECTION.URI
   }
+
+  getHabitacion(){
+    let habitacion = JSON.parse(localStorage.getItem('roomSelected'));
+    if(habitacion!=undefined || habitacion != null){
+      this.habitacion = habitacion
+    }else{
+      this.habitacion = null
+    }
+    return this.habitacion;
+  }
   
   saveHabitacion(idHotel, habitacion){
     let headers = new HttpHeaders({

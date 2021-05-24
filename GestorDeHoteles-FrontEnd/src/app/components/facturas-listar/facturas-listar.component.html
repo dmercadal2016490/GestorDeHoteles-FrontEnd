@@ -1,30 +1,11 @@
-
-    <!--<hr>
-    <form (ngSubmit)="onSubmit()">
-    <form>
-        <h1><em>Factura</em></h1>
-        <h2 for="inputUserName">Total Pagar</h2>
-            <input [(ngModel)]="facturas.totalPagar" name="totalPagar" #username="ngModel" class="form-control" id="inputTotalPagar" type="text" placeholder="Price">
-        <hr>
-        <h2 for="inputName">Usuario</h2>
-            <input [(ngModel)]="facturas.usuarioPagar" name="usuarioPagar" #name="ngModel" class="form-control" id="inputUsuarioPagar" type="text" placeholder="Your name">
-        <hr>
-
-        <button type="submit" class="btn btn-success col-lg-3 mx-2">Aceptar</button>
-        <hr>
-    </form>
-    <hr>
-    <h2 class="creditos">&copy;Grupo #2</h2>
-    <hr>
-    <hr>
-    -->
 <body>
+    
     <hr>
     <div class="container">
         <div class="row">
           <div class="span4">
             <address>
-                <strong class="titulo">{{hotel.name}}</strong><br>
+                <strong class="titulo">FACTURA</strong><br>
 
             </address>
           </div>
@@ -34,6 +15,10 @@
                 <tr>
                   <td class="pull-right"><strong>Usuario</strong></td>
                   <td>{{user.username}}</td>
+                  <hr>
+                  <hr>
+                  <td class="pull-right"><strong>No. de tarjeta</strong></td>
+                  <td>{{reservacion.numeroTarjeta}}</td>
                 </tr>
                 <hr>
                 
@@ -41,10 +26,10 @@
             </table>
           </div>
         </div>
-        <form (ngSubmit)="onSubmit(saveFactura)" #saveFactura="ngForm">
+    <!--    <form (ngSubmit)="onSubmit(saveFactura)" #saveFactura="ngForm">-->
         <div class="row">
           <div class="span8">
-            <h2><em>Factura</em></h2>
+           
             <hr>
           </div>
         </div>
@@ -53,15 +38,15 @@
             <table class="table-bordered">
             <thead>
               <tr>
-                            <th>Habitación</th>
-            
+                <th>Habitación</th>
                 <th>TOTAL</th>
               </tr>
             </thead>
             <tbody>
             <tr>
-              <td>{{habitacion.descripcion}}</td>
-                        <td><input class="form-control" [(ngModel)]="facturas.totalPagar" name="totalPagar"   id="totalPagar" type="number" placeholder="Price"></td>
+              <td>ID: {{reservacion.room}}</td>
+              <td>{{reservacion.totalPagar}}</td>
+                        <!--<td><input class="form-control" [(ngModel)]="facturas.totalPagar" name="totalPagar"   id="totalPagar" type="number" placeholder="Price"></td>-->
               </tr>
               <tr><td colspan="1"></td></tr>
   <tr>
@@ -75,16 +60,17 @@
         </div>
         <div class="row">
           <div class="span8 well invoice-thank">
-            <button type="submit" class="btn btn-success col-lg-3 mx-2">Aceptar</button>  
+            <button type="submit" class="btn btn-success col-lg-3 mx-2" routerLink="/reservaciones">Regresar</button>  
             <hr>
 
             <h5 style="text-align:center;">Muchas gracias!</h5>
             <hr>
           </div>
         </div>
-               
+    </div>
+
       <hr>
       <hr>
       <h2 class="creditos">&copy;Grupo #2</h2>
       <hr>
-
+    </body> 

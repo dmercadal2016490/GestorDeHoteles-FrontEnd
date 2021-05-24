@@ -35,6 +35,7 @@ import { HabitacionesComponent } from './components/habitaciones/habitaciones.co
 import { ListEventosComponent } from './components/list-eventos/list-eventos.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
 import { ReservacionesComponent } from './components/reservaciones/reservaciones.component';
+import { FacturasListarComponent } from './components/facturas-listar/facturas-listar.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { ReservacionesComponent } from './components/reservaciones/reservaciones
     ListEventosComponent,
     GraficaComponent,
     ReservacionesComponent,
+    FacturasListarComponent,
   ],
   imports: [
     BrowserModule,

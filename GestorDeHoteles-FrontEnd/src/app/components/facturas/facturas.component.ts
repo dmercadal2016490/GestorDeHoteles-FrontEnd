@@ -5,6 +5,7 @@ import { RestUserService } from 'src/app/services/restUser/rest-user.service';
 import { FacturaService } from 'src/app/services/restFactura/factura.service'
 import { Facturas } from '../../models/facturas';
 import { Router } from '@angular/router';
+import { RestHabitacionService } from 'src/app/services/restHabitacion/rest-habitacion.service';
 
 @Component({
   selector: 'app-facturas',
@@ -14,6 +15,7 @@ import { Router } from '@angular/router';
 export class FacturasComponent implements OnInit {
   hotels;
   hotel;
+  habitacion;
   reservation;
   public user;
   public token;
@@ -26,6 +28,7 @@ export class FacturasComponent implements OnInit {
      private restFactura:FacturaService,
      private restHotel:RestHotelService,
       private restReservacion:RestReservacionService,
+      private restHabitacion:RestHabitacionService,
       private route: Router
       ){
 
@@ -35,10 +38,12 @@ export class FacturasComponent implements OnInit {
     this.facturas = new Facturas(null, []);
     this.token = this.restFactura.getToken();
     /*this.user = this.restUser.getUser();*/
+    this.habitacion = this.restHabitacion.getHabitacion();
     this.user = JSON.parse(localStorage.getItem('user'))
     this.hotels = this.restHotel.getHotels();
     this.hotel = JSON.parse(localStorage.getItem('hotelSelected'))
     this.reservation = this.restReservacion.getReservacion();
+    this.habitacion = JSON.parse(localStorage.getItem('roomSelected'));
   }
 
   onSubmit(form){

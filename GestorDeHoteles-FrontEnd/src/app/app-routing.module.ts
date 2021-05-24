@@ -26,7 +26,7 @@ import { HabitacionesComponent } from './components/habitaciones/habitaciones.co
 import { ListEventosComponent } from './components/list-eventos/list-eventos.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
 import { ReservacionesComponent } from './components/reservaciones/reservaciones.component';
-
+import { FacturasListarComponent } from './components/facturas-listar/facturas-listar.component';
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
@@ -51,6 +51,7 @@ const routes: Routes = [
   {path:'habitaciones', canActivate:[LoggedGuard], component:HabitacionesComponent},
   {path: 'reservaciones',canActivate:[LoggedGuard], component:ReservacionesComponent},
   {path:'listEventos', canActivate:[LoggedGuard],component:ListEventosComponent},
+  {path: 'listarfactura', canActivate:[LoggedGuard],component:FacturasListarComponent},
   {path:'graficas', canActivate: [AdminGuard],component:GraficaComponent},
   {path: '**', component:NotFoundComponent}
 ];
